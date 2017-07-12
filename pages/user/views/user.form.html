@@ -1,0 +1,81 @@
+<div class="row" ng-init="passwordError=false; confirmPasswordError=false;">
+
+	<div class="container">
+
+		<div class="row">
+			<h2>{{isUpdate ? 'Alterar':'Novo'}} Usuário</h2>
+
+			<a href="javascript:void(0)" class="btn btn-primary btn-fab" ui-sref="app.user"><i class="fa fa-chevron-left"></i></a>
+		</div>
+
+
+		<div class="row register-container transparent" style="margin-top: 20px;">
+
+			<div id="register">
+
+				<p>
+				<form id="signup-form" role="form" name="userForm">
+				<div class="col-lg-6">
+					<button
+							type="button"
+							class="btn btn-raised"
+							ng-class="user.status ? 'btn-success' : 'btn-default'"
+							ng-click="user.status=!user.status; statusDesc = user.status ? 'Ativo' : 'Inativo'">
+						{{statusDesc}}</button>
+				</div>
+				<div class="col-lg-6">
+					<div class="form-group label-static" ng-class="userTypeError ? 'has-warning' : ''">
+						<label for="user_type" class="control-label">Tipo de Usuário</label>
+						<select
+                                id="user_type"
+                                class="form-control"
+                                ng-model="user.role"
+                                ng-options="type for type in userTypes"></select>
+					</div>
+				</div>
+				<div class="col-lg-6">
+						<div class="form-group label-static">
+							<label for="name" class="control-label">NOME</label>
+							<input type="text" class="form-control" id="name" ng-model="user.name" name="name" required>
+							<i class="fa fa-info form-control-feedback"></i>
+						</div>
+					</div>
+
+					<div class="col-lg-6">
+						<div class="form-group label-static">
+							<label for="email" class="control-label">E-MAIL</label>
+							<input type="email" class="form-control" id="email" ng-model="user.email" name="email">
+							<i class="fa fa-envelope form-control-feedback"></i>
+						</div>
+					</div>
+
+					<div class="col-lg-6">
+						<div class="form-group label-static" ng-class="passwordError ? 'has-warning' : ''">
+							<label for="password" class="control-label">SENHA</label>
+							<input type="password" class="form-control" id="password" ng-model="user.password" name="password" required>
+							<i class="fa fa-key form-control-feedback"></i>
+						</div>
+					</div>
+
+					<div class="col-lg-6">
+						<div class="form-group label-static" ng-class="confirmPasswordError ? 'has-warning' : ''">
+							<label for="confirmpassword" class="control-label">CONFIRMAR SENHA</label>
+							<input type="password" class="form-control" id="confirmpassword" ng-model="user.confirmPassword" name="confirmpassword" required>
+							<i class="fa fa-key form-control-feedback"></i>
+						</div>
+					</div>
+
+					<div class="col-lg-12">
+						<div class="form-group label-static">
+							<button id="btn-signup" ng-click="salvar(user)" href="javascript:void(0)" class="btn btn-raised btn-info">{{isUpdate ? 'Salvar Alterações' : 'Cadastrar'}}</button>
+						</div>
+					</div>
+
+				</form>
+				</p>
+
+			</div>
+
+		</div>
+	</div>
+</div>

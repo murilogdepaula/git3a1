@@ -1,0 +1,150 @@
+<div class="row">
+    <div class="container" style="margin-top:50px;">
+        <div class="row">
+            <div class="col-md-1">
+                <a href="javascript:void(0)"
+                   class="btn btn-primary btn-fab"
+                   ui-sref="app.pedidos"><i class="fa fa-chevron-left"></i></a>
+            </div>
+            <div class="col-md-9">
+                <h2>Resumo Pedido</h2>
+            </div>
+            <div class="col-md-2">
+                <label class="label {{statusPedido.style}}" style="padding: 8px;">
+                    {{statusPedido.description.toUpperCase()}}
+                </label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <ul class="nav nav-tabs" style="margin: 15px 0;">
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_edit({id:pedido._id})">Pedido</a></li>
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_add_agendamento({id:pedido._id})">Agendamento</a></li>
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_add_deslocamento({id:pedido._id})">Deslocamento</a></li>
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_resumo({id:pedido._id})">Resumo</a></li>
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_analista({id:pedido._id})">Área do Analista</a></li>
+            </ul>
+        </div>
+
+        <form id="pedido-deslocamento-form" role="form" name="pedidoDeslocamentoForm">
+            <a href="javascript:void(0)" class="btn btn-danger btn-raised" ng-click="confirmDeletePedido(u)">Cancelar Pedido <i class="fa fa-trash"></i></a>
+            <div class="row transparent" style="margin-top: 20px;">
+                <div class="col-lg-3">
+                    <div class="form-group label-static">
+                        <label for="dataTransmissao" class="control-label">Data:</label>
+                        <input type="text"
+                               mask="99/99/9999"
+                               class="form-control"
+                               id="dataTransmissao"
+                               ng-model="transmissao.data"
+                               name="dataTransmissao">
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="form-group label-static">
+                        <label for="horaMarcada" class="control-label">Horário:</label>
+                        <input type="text" mask="99:99"
+                               class="form-control"
+                               id="horaMarcada"
+                               ng-model="transmissao.horario"
+                               name="horaMarcada">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <label for="horaMarcada" class="control-label">Problemas na transmissão:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="problemas"
+                               ng-model="transmissao.problemas"
+                               name="horaMarcada">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="form-group label-static">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="transmissao.zerarHonorario">
+                                Zerar Honorário
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group label-static">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="transmissao.zerarDeslocamento">
+                                Zerar deslocamento
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <label for="horaMarcada" class="control-label">VR (Quando empresarial Allianz):</label>
+                        <input type="text"
+                               class="form-control"
+                               id="vr"
+                               ng-model="transmissao.vr"
+                               name="horaMarcada">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <label for="area_construida" class="control-label">Área construída (quando empresarial Sompo):</label>
+                        <input type="text"
+                               class="form-control"
+                               id="area_construida"
+                               ng-model="transmissao.area_construida"
+                               name="horaMarcada">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <label for="qtd_blocos" class="control-label">Quantidade de blocos (quando condomínio):</label>
+                        <input type="text"
+                               class="form-control"
+                               id="qtd_blocos"
+                               ng-model="transmissao.qtd_blocos"
+                               name="qtd_blocos">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <label for="qtd_equip" class="control-label">Quantidade de equipamentos no local(quando Equip. Sompo):</label>
+                        <input type="text"
+                               class="form-control"
+                               id="qtd_equip"
+                               ng-model="transmissao.qtd_equip"
+                               name="qtd_equip">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <button type="button" class="btn btn-success btn-raised" ng-click="finalizar()">Finalizar</button>
+                <button type="button" class="btn btn-raised btn-default" ng-click="frustar()">Frustar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,14 @@
+{
+  "name": "ecommerce-admin",
+  "version": "1.0.0",
+  "description": "Admin area for eccomerce",
+  "scripts": {
+    "start" : "http-server --cors",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antony Alkmim <antony-alkmim@hotmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}

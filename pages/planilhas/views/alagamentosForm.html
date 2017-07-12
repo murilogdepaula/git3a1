@@ -1,0 +1,1996 @@
+<div class="row">
+    <div class="container" style="margin-top:50px;">
+        <div class="row">
+            <div class="col-md-1">
+                <a href="#"
+                   class="btn btn-primary btn-fab"
+                   ui-sref="app.planilhas_condominios"><i class="fa fa-chevron-left"></i></a>
+            </div>
+            <div class="col-md-11">
+                <h2>{{isUpdate ? 'Alterar':'Novo'}} Risco de Alagamento / Desmoronamento</h2>
+            </div>
+        </div>
+
+		<!-- ----------------------
+            Garantia de a
+         ------------------------ -->
+		<div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Inspecao de Risco </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label class="control-label">
+                                        Código inspetor:
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="inspecao_codigoInspetor"
+                                            ng-model="inspecao.codigoInspetor"
+                                            name="inspecao_codigoInspetor" >
+                                </div>
+                            </div>    
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label class="control-label">
+                                       Numero inspeção
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="inspecao_numeroInspetor"
+                                            ng-model="inspecao.numeroInspetor"
+                                            name="inspecao_numeroInspetor"
+                                            mask='99/99/9999' >
+                                </div>
+                            </div>    
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label class="control-label">
+                                       Ano
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="inspecao_Ano"
+                                            ng-model="inspecao.Ano"
+                                            name="inspecao_Ano"
+                                            mask='99/99/9999'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group label-static">
+                                    <label class="control-label">
+                               		Seguradora
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="inspecao_seguradora"
+                                            ng-model="inspecao.seguradora"
+                                            name="inspecao_seguradora">
+                                </div>
+                            </div>                
+                            <div class="col-lg-6">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> 
+                                    Filial
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="inspecao_filial"
+                                            ng-model="inspecao.filial"
+                                            name="inspecao_filial" >
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> 
+                                    Solicitado por
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="inspecao_solicidoNome"
+                                            ng-model="inspecao.solicidoNome"
+                                            name="inspecao_solicidoNome" >
+                                </div>
+                            </div>  
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> 
+                                    Em
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="inspecao_em"
+                                            ng-model="inspecao.em"
+                                            name="inspecao_em">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> 
+                                    Data Inspeção
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="inspecao_dataInspecao"
+                                            ng-model="inspecao.dataInspecao"
+                                            name="inspecao_dataInspecao">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> 
+                                    Corretor
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="inspecao_corretor"
+                                            ng-model="inspecao.corretor"
+                                            name="inspecao_corretor">
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="row">
+                        	<div class="col-lg-12">
+                        		<div class="form-group label-static">
+                        		    <label for="inspecao_segurado" class="control-label">
+                        	           Segurado
+                        		    </label>
+                        		    <input type="text" 
+                        			    class="form-control" 
+                        			    id="inspecao_segurado"
+                        			    ng-model="inspecao.segurado"
+                        			    name="inspecao_segurado" >
+                        		</div>
+                        	</div>
+                        	<div class="col-lg-8">
+                        		<div class="form-group label-static">
+                        		    <label for="inspecao_enderecoRisco" class="control-label">
+                        				Endereco do risco
+                        		    </label>
+                        		    <input type="text" 
+                        			    class="form-control" 
+                        			    id="inspecao_enderecoRisco"
+                        			    ng-model="inspecao.enderecoRisco"
+                        			    name="inspecao_enderecoRisco" >
+                        		</div>
+                        	</div>
+                        	<div class="col-lg-4">
+                        		<div class="form-group label-static">
+                        		    <label for="inspecao_cep" class="control-label">
+                        				Cep
+                        		    </label>
+                        		    <input type="text" 
+                        			    class="form-control" 
+                        			    id="inspecao_cep"
+                        			    ng-model="inspecao.cep"
+                        			    name="inspecao_cep"
+                        			    mask='cep' >
+                        		</div>
+                        	</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> 
+                                        Bairro
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="inspecao_bairro"
+                                            ng-model="inspecao.bairro"
+                                            name="inspecao_bairro" >
+                                </div>
+                            </div>    
+                            <div class="col-lg-4 ">
+                                <div class="form-group label-static">
+                                    <label class="control-label">Cidade</label>
+                                    <input type="text"
+                                          class="form-control"
+                                           id="inspecao_cidade"
+                                           ng-model="inspecao.cidade">
+                                        <i class="fa fa-map-o form-control-feedback"></i>
+                                </div>
+                            </div>                                                      
+                            <div class="col-lg-4 ">
+                                <div class="form-group label-static">
+                                    <label for="inspecao_estado" class="control-label">UF</label>
+                                    <select class="form-control" 
+                                            ng-model="pedido.proponente.estado"
+                                            id="inspecao_estado"
+                                            uf-options>
+                                    </select>
+                                    <i class="fa fa-caret-down form-control-feedback"></i>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="row">
+                        	<div class="col-lg-4">
+                        		<div class="form-group label-static">
+                        		    <label for="inspecao_cpfCGC" class="control-label">
+                        				CPF/CGC
+                        		    </label>
+                        		    <input type="text" 
+                        			    class="form-control" 
+                        			    id="inspecao_cpfCGC"
+                        			    ng-model="inspecao.cpfCGC"
+                        			    name="inspecao_cpfCGC" >
+                        		</div>
+                        	</div>
+                        	<div class="col-lg-4">
+                        		<div class="form-group label-static">
+                        		    <label for="inspecao_responsavelInformacao" class="control-label">
+                        				Responsável pelas informações
+                        		    </label>
+                        		    <input type="text" 
+                        			    class="form-control" 
+                        			    id="inspecao_responsavelInformacao"
+                        			    ng-model="inspecao.responsavelInformacao"
+                        			    name="inspecao_responsavelInformacao" >
+                        		</div>
+                        	</div>
+                        	<div class="col-lg-4">
+                        		<div class="form-group label-static">
+                        		    <label for="inspecao_foneFax" class="control-label">
+                        				Fone/fax
+                        		    </label>
+                        		    <input type="text" 
+                        			    class="form-control" 
+                        			    id="inspecao_foneFax"
+                        			    ng-model="inspecao.foneFax"
+                        			    name="inspecao_foneFax" >
+                        		</div>
+                        	</div>
+                        </div>
+
+
+
+
+                        <div class="row">
+                        	<div class="col-lg-12 form-group">
+                        	    <div class="togglebutton">
+                        	         <label>
+                        	            Possui outros seguros em vigência ?
+                        	            <input type="checkbox"
+                        	                    id="riscos_geral"
+                        	                    ng-model="riscos.geral"> 
+                        	        </label>
+                        	    </div>
+                        	</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-6" style="padding: 0 30px 0 0;">
+                                    <div class="form-group label-static">
+                                        <label class="control-label">
+                                           Já ocorreu algum sinistro, nos últimos 05 anos, no endereço a segurar ?
+                                         </label>
+                                        <div class="btn-group custom-toggle" data-toggle="buttons">
+                                            <label class="btn btn-success active" ng-click="inspecaoSinistral.isSegurado=false">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"
+                                                       checked> Sim
+                                            </label>
+                                            <label class="btn btn-danger" ng-click="inspecaoSinistral.isSegurado=true">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"> Não 
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" style="padding: 0 30px 0 0;" ng-hide="inspecaoSinistral.isSegurado">
+                                    <div class="form-group label-static">
+                                        <label class="control-label"> 
+                                            Importância Segurada 
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="inspecao_valorSegurado"
+                                               ng-model="inspecao.valorSegurado"
+                                               name="inspecao_valorSegurado"
+                                               ng-required="inspecaoSinistral.isSegurado"
+                                               mask-money>
+                                        <i class="fa fa-question form-control-feedback"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group" ng-hide="inspecaoSinistral.isSegurado">
+                                <label for="inspecao_diferencaISVR" class="col-lg-12 control-label">
+                                    Comentar, quando houver, o motivo das diferenças entre I.S. e V.R. das garantias pretendidas
+                                </label>
+                                <div class="col-md-12">
+                                     <textarea class="form-control" 
+                                                 rows="3" 
+                                                 id="inspecao_diferencaISVR"
+                                                 ng-model="inspecao.diferencaISVR"
+                                                 ng-required="inspecaoSinistral.isSegurado">
+                                     </textarea>
+                                </div>
+                            </div>  
+                        </div>
+                        <div class="row">
+                        	<div class="col-lg-12">
+                    			<div class="form-group">
+                        			<label class="control-label col-lg-12"> Quanto ao risco, de forma global, o classificaria em </label>
+                        			<div class="col-lg-2">
+                        			    <div class="checkbox">
+                        			       <label class="control-label">
+                        			           <input type="checkbox" 
+                        			                  id="inspecao_riscoAlto"
+                        			                  ng-model="inspecao.riscoAlto"> Alto
+                        			       </label>
+                        			   </div>
+                        			</div>
+                        			<div class="col-lg-2">
+                        			    <div class="checkbox">
+                        			       <label class="control-label">
+                        			           <input type="checkbox" 
+                        			                  id="inspecao_riscoMedio"
+                        			                  ng-model="inspecao.riscoMedio"> Médio
+                        			       </label>
+                        			   </div>
+                        			</div>
+                        			<div class="col-lg-2">
+                        			    <div class="checkbox">
+                        			       <label class="control-label">
+                        			           <input type="checkbox" 
+                        			                  id="inspecao_riscoBaixo"
+                        			                  ng-model="inspecao.riscoBaixo"> Baixo
+                        			       </label>
+                        			   </div>
+                        			</div>
+                        			<div class="col-lg-2">
+                        			    <div class="checkbox">
+                        			       <label class="control-label">
+                        			           <input type="checkbox" 
+                        			                  id="inspecao_riscoInexistente"
+                        			                  ng-model="inspecao.riscoInexistente"> Inexistente
+                        			       </label>
+                        			   </div>
+                        			</div>
+                        		</div>
+                        	</div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="inspecao_outrosRiscos" class="col-lg-12 control-label">
+                                   Quais os outros riscos existentes no local que merecem atenção e poderiam ser incluídos no seguro
+                                </label>
+                                <div class="col-md-12">
+                                     <textarea class="form-control" 
+                                                 rows="3" 
+                                                 id="inspecao_outrosRiscos"
+                                                 ng-model="inspecao.outrosRiscos">
+                                     </textarea>
+                                </div>
+                            </div>  
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="inspecao_reacaoSegurado" class="col-lg-12 control-label">
+                                  Qual a reação do segurado quanto as melhorias solicitadas?
+                                </label>
+                                <div class="col-md-12">
+                                     <textarea class="form-control" 
+                                                 rows="3" 
+                                                 id="inspecao_reacaoSegurado"
+                                                 ng-model="inspecao.reacaoSegurado">
+                                     </textarea>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>    
+                </div>    
+            </div>    
+        </div> 
+
+        <!-- ----------------------
+            Caracteristicas Imovel
+         ------------------------ -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Características do Imóvel </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                        	<div class="col-lg-3">
+                    			<div class="row">
+                        			<div class="form-group">
+                        				<label class="control-label col-lg-12">Ocupção</label>
+                        				<div class="col-lg-12">
+                    					    <div class="checkbox">
+                    					       <label class="control-label">
+                    					           <input type="checkbox" 
+                    					                  id="imovel_ocupacaoResidencial"
+                    					                  ng-model="imovel.ocupacaoResidencial"> Residêncial
+                    					       </label>
+                    					   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="imovel_ocupacaoComercial"
+                        				                  ng-model="imovel.ocupacaoComercial"> Comercial
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="imovel_ocupacaoIndustrial"
+                        				                  ng-model="imovel.ocupacaoIndustrial"> Indústrial
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="imovel_ocupacaoMista"
+                        				                  ng-model="imovel.ocupacaoMista"> Mista
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        			</div>
+                        		</div>
+                        	</div>
+	                        <div class="col-lg-3">
+                    			<div class="row">
+                        			<div class="form-group">
+                        				<label class="control-label col-lg-12">Qualidade de Construção</label>
+                        				<div class="col-lg-12">
+                    					    <div class="checkbox">
+                    					       <label class="control-label">
+                    					           <input type="checkbox" 
+                    					                  id="imovel_qualidadeOtimo"
+                    					                  ng-model="imovel.qualidadeOtimo"> Ótima
+                    					       </label>
+                    					   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="imovel_qualidadeBom"
+                        				                  ng-model="imovel.qualidadeBom"> Boa
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="imovel_qualidadeRegular"
+                        				                  ng-model="imovel.qualidadeRegular"> Regular
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="imovel_qualidadePessima"
+                        				                  ng-model="imovel.qualidadePessima"> Péssima
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        			</div>
+                        		</div>
+                        	</div>
+                        	<div class="col-lg-3">
+                    			<div class="row">
+                        			<div class="form-group">
+                        				<label class="control-label col-lg-12">Tipo conforme a TSIB</label>
+                        				<div class="col-lg-12">
+                    					    <div class="checkbox">
+                    					       <label class="control-label">
+                    					           <input type="checkbox" 
+                    					                  id="imovel_tsibSuperior"
+                    					                  ng-model="imovel.tsibSuperior"> Superior
+                    					       </label>
+                    					   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="imovel_tsibSolida"
+                        				                  ng-model="imovel.tsibSolida"> Sólida
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="imovel_tsibMista"
+                        				                  ng-model="imovel.tsibMista"> Mista
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="imovel_tsibInferior"
+                        				                  ng-model="imovel.tsibInferior"> Inferior
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        			</div>
+                        		</div>
+                        	</div>
+							<div class="col-lg-3">
+                    			<div class="row">
+                        			<div class="form-group">
+                        				<label class="control-label col-lg-12"> Conservação </label>
+                        				<div class="col-lg-12">
+                    					    <div class="checkbox">
+                    					       <label class="control-label">
+                    					           <input type="checkbox" 
+                    					                  id="imovel_conservacaoOtimo"
+                    					                  ng-model="imovel.conservacaoOtimo"> Ótima
+                    					       </label>
+                    					   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="imovel_conservacaoBom"
+                        				                  ng-model="imovel.conservacaoBom"> Boa
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="imovel_conservacaoRegular"
+                        				                  ng-model="imovel.conservacaoRegular"> Regular
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="imovel_conservacaoPessima"
+                        				                  ng-model="imovel.conservacaoPessima"> Péssima
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        			</div>
+                        		</div>
+                        	</div>                        	
+                        </div> 
+                        <div class="row">
+                        	<div class="col-lg-4">
+                        		<div class="form-group label-static">
+                        		    <label for="imovel_areaConstruida" class="control-label">
+                        				Área construída ou ocupada
+                        		    </label>
+                        		    <input type="text" 
+                        			    class="form-control" 
+                        			    id="imovel_areaConstruida"
+                        			    ng-model="imovel.areaConstruida"
+                        			    name="imovel_areaConstruida" >
+                        		</div>
+                        	</div>
+                        	<div class="col-lg-4">
+                        		<div class="form-group label-static">
+                        		    <label for="imovel_areaPavimento" class="control-label">
+                        				Área por pavimento
+                        		    </label>
+                        		    <input type="text" 
+                        			    class="form-control" 
+                        			    id="imovel_areaPavimento"
+                        			    ng-model="imovel.areaPavimento"
+                        			    name="imovel_areaPavimento" >
+                        		</div>
+                        	</div>
+                        </div>  
+                        <div class="row">
+                        	<div class="col-lg-12 form-group">
+                        	    <div class="togglebutton">
+                        	         <label>
+                        	            Possui Jardim , tanque, ou piscina?
+                        	            <input type="checkbox"
+                        	                    id="imovel_jardimTanquePisina"
+                        	                    ng-model="imovel.jardimTanquePisina"> 
+                        	        </label>
+                        	    </div>
+                        	</div>
+                        	<div class="col-lg-12 form-group">
+                        	    <div class="togglebutton">
+                        	         <label>
+                        	            O telhado abrange toda a área (exceto casa de maquinas e caixa d água)?
+                        	            <input type="checkbox"
+                        	                    id="imovel_telhadoAbrange"
+                        	                    ng-model="imovel.telhadoAbrange"> 
+                        	        </label>
+                        	    </div>
+                        	</div>
+                        </div> 
+                        <div class="row">
+                        	<div class="form-group">
+                        	    <label for="imovel_aberturasProtecao" class="col-lg-12 control-label">
+                        	     	Aberturas existentes e tipo de proteção:   
+                        	    </label>
+                        	    <div class="col-md-12">
+                        	         <textarea class="form-control" 
+                        	                     rows="3" 
+                        	                     id="imovel_aberturasProtecao"
+                        	                     ng-model="imovel.aberturasProtecao">
+                        	         </textarea>
+                        	    </div>
+                        	</div>  
+                        </div>
+                    </div>    
+                </div>    
+            </div>    
+        </div>
+
+        <!-- ----------------------
+            Curso d'água, adutora, mar(oceano), canal, rio navegável, etc... . 
+         ------------------------ -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                         <h3 class="panel-title"> Curso d'água, adutora, mar(oceano), canal, rio navegável, etc... .  </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                         	<div class="col-lg-12">
+                         		<div class="form-group label-static">
+                         		    <label for="agua_nomeDescricao" class="control-label">
+                         				Nome ou descrição
+                         		    </label>
+                         		    <input type="text" 
+                         			    class="form-control" 
+                         			    id="agua_nomeDescricao"
+                         			    ng-model="agua.nomeDescricao"
+                         			    name="agua_nomeDescricao" >
+                         		</div>
+                         	</div>
+                        </div>    
+                        <div class="row">
+                         	<div class="col-lg-6">
+                         		<div class="form-group label-static">
+                         		    <label for="imovel_distanciaPlanimetrica" class="control-label">
+                         	   			Distância planimétrica ao risco:
+                         		    </label>
+                         		    <input type="text" 
+                         			    class="form-control" 
+                         			    id="imovel_distanciaPlanimetrica"
+                         			    ng-model="imovel.distanciaPlanimetrica"
+                         			    name="imovel_distanciaPlanimetrica" >
+                         		</div>
+                         	</div>
+                         	<div class="col-lg-6">
+                         		<div class="form-group label-static">
+                         		    <label for="imovel_diferencaNivel" class="control-label">
+                         	   			Diferença de nível em relação ao risco:
+                         		    </label>
+                         		    <input type="text" 
+                         			    class="form-control" 
+                         			    id="imovel_diferencaNivel"
+                         			    ng-model="imovel.diferencaNivel"
+                         			    name="imovel_diferencaNivel" >
+                         		</div>
+                         	</div>
+                        </div>
+                        <div class="row">
+                        	<div class="col-lg-12 form-group">
+                        	    <div class="togglebutton">
+                        	         <label>
+                        	            Seu curso em regime de cheia poderá  afetar as fundações:
+                        	            <input type="checkbox"
+                        	                    id="imovel_cursoRegimeCheio"
+                        	                    ng-model="imovel.cursoRegimeCheio"> 
+                        	        </label>
+                        	    </div>
+                        	</div>
+                        </div>
+                        <div class="row">
+                        	<div class="col-lg-12">
+	                        	<div class="form-group">
+	                        		<div class="row">
+	                        			<label class="control-label col-lg-12"> Conservação aparente do sistema de escoamento na rede pública </label>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="imovel_escoamentoBom"
+	                        			                  ng-model="imovel.escoamentoBom"> Boa
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="imovel_escoamentoRegular"
+	                        			                  ng-model="imovel.escoamentoRegular"> Regular
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="imovel_escoamentoRuim"
+	                        			                  ng-model="imovel.escoamentoRuim"> Ruim
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        		</div>
+	                        	</div>
+                        	</div>
+                        </div>
+                    </div>    
+                </div>    
+            </div>    
+        </div> 
+
+
+        <!-- ----------------------
+            Condições do terreno alagamento
+         ------------------------ --> 
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Condições do terreno </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                        	<div class="col-lg-12">
+                        		<div class="form-group">
+                        			<div class="row">
+                        				<div class="col-lg-12 hidden-sm hidden-xs">
+                        					<label class=" col-lg-1 control-label "></label>
+                        					<label class=" col-lg-2 control-label">Favorável</label>
+                        					<label class=" col-lg-2 col-lg-offset-1 control-label">Desfavorável</label>
+                        					<label class=" col-lg-2 col-lg-offset-1 control-label">Muito desfavorável</label>
+                        				</div>
+                    				</div>
+                    				<div class="row">
+                    					<label class="control-label col-lg-1">Natureza</label>
+                						<div class="col-lg-2">
+                        				    <div class="checkbox" style="margin-left: 10px">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="terreno_naturezaFavoralvel"
+                        				                  ng-model="terreno.natureza">
+                        				       </label>
+                        					</div>
+                    					</div>
+                    					<div class="col-lg-2">
+                        				    <div class="checkbox" style="margin-left: 10px">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="terreno_naturezaDesfavoravel"
+                        				                  ng-model="terreno.naturezaDesfavoravel">
+                        				       </label>
+                        					</div>
+                    					</div>
+                    					<div class="col-lg-2">
+                        				    <div class="checkbox" style="margin-left: 10px">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="terreno_naturezaMuitoDesfavoravel"
+                        				                  ng-model="terreno.naturezaMuitoDesfavoravel">
+                        				       </label>
+                        					</div>
+                    					</div>
+                        			</div>
+                    				<div class="row">
+                    					<label class="control-label col-lg-1">Topografia</label>
+                						<div class="col-lg-2">
+                        				    <div class="checkbox" style="margin-left: 10px">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="terreno_topografiaFavoralvel"
+                        				                  ng-model="terreno.topografia">
+                        				       </label>
+                        					</div>
+                    					</div>
+                    					<div class="col-lg-2">
+                        				    <div class="checkbox" style="margin-left: 10px">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="terreno_topografiaDesfavoravel"
+                        				                  ng-model="terreno.topografiaDesfavoravel">
+                        				       </label>
+                        					</div>
+                    					</div>
+                    					<div class="col-lg-2">
+                        				    <div class="checkbox" style="margin-left: 10px">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="terreno_topografiaMuitoDesfavoravel"
+                        				                  ng-model="terreno.topografiaMuitoDesfavoravel">
+                        				       </label>
+                        					</div>
+                    					</div>
+                        			</div>  
+			                        <div class="row">
+			                            <div class="col-lg-12">
+			                                <div class="col-lg-3" style="padding: 0 30px 0 0;">
+			                                    <div class="form-group label-static">
+			                                        <label class="control-label">
+			                                           Houve algum sinistro:
+			                                         </label>
+			                                        <div class="btn-group custom-toggle" data-toggle="buttons">
+			                                            <label class="btn btn-success active" ng-click="terreno.isSegurado=false">
+			                                                <input type="radio"
+			                                                       name="options"
+			                                                       autocomplete="off"
+			                                                       checked> Sim
+			                                            </label>
+			                                            <label class="btn btn-danger" ng-click="terreno.isSegurado=true">
+			                                                <input type="radio"
+			                                                       name="options"
+			                                                       autocomplete="off"> Não 
+			                                            </label>
+			                                        </div>
+			                                    </div>
+			                                </div>
+			                                <div class="col-lg-9" style="padding: 0 30px 0 0;" ng-hide="terreno.isSegurado">
+			                                    <div class="form-group label-static">
+			                                        <label class="control-label"> 
+			                                            Descrever Sinistro
+			                                        </label>
+			                                        <input type="text"
+			                                               class="form-control"
+			                                               id="terreno_descricaoSinistro"
+			                                               ng-model="terreno.descricaoSinistro"
+			                                               name="terreno_descricaoSinistro"
+			                                               ng-required="terreno.isSegurado">
+			                                        <i class="fa fa-question form-control-feedback"></i>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </div>
+
+                        		</div>
+                        	</div>	
+                        </div>    
+                    </div>
+                </div>    
+            </div>    
+        </div>  
+
+        <!-- ----------------------
+            Quadro de influencia  Alagamento
+         ------------------------ -->         
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Quadro de influências </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                        	<div class="col-lg-12 form-group">
+                        	    <div class="togglebutton">
+                        	         <label>
+                        	            1ª Influência - Curso d água e/ou adutora
+                        	            <input type="checkbox"
+                        	                    id="influencia_cursoAgua"
+                        	                    ng-model="influencia.cursoAgua"> 
+                        	        </label>
+                        	    </div>
+                        	</div>
+                        	<div class="col-lg-12 form-group">
+                        	    <div class="togglebutton">
+                        	         <label>
+                        	            2ª Influência - Conformação topográfica e ocorrência anteriores
+                        	            <input type="checkbox"
+                        	                    id="influencia_conformacaoTopografica"
+                        	                    ng-model="influencia.conformacaoTopografica"> 
+                        	        </label>
+                        	    </div>
+                        	</div>
+                        	<div class="col-lg-12 form-group">
+                        	    <div class="togglebutton">
+                        	         <label>
+                        	            3ª Influência - Telhados e/ou terraços
+                        	            <input type="checkbox"
+                        	                    id="influencia_telhadoTerraco"
+                        	                    ng-model="influencia.telhadoTerraco"> 
+                        	        </label>
+                        	    </div>
+                        	</div>
+                        </div>    
+                    </div>    
+                </div>    
+            </div>    
+        </div>
+
+
+        <!-- ----------------------
+            Parecer Perito Alagamento
+         ------------------------ -->  
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Parecer do perito sobre o risco de alagamento </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                        	<div class="form-group">
+                        	    <label for="parecer_exigencias" class="col-lg-12 control-label">
+                        			Exigências        
+                        	    </label>
+                        	    <div class="col-md-12">
+                        	         <textarea class="form-control" 
+                        	                     rows="3" 
+                        	                     id="parecer_exigencias"
+                        	                     ng-model="parecer.exigencias">
+                        	         </textarea>
+                        	    </div>
+                        	</div>  
+                        </div>
+                        <div class="row">
+                        	<div class="form-group">
+                        	    <label for="parecer_recomendacoes" class="col-lg-12 control-label">
+                        			Recomendações        
+                        	    </label>
+                        	    <div class="col-md-12">
+                        	         <textarea class="form-control" 
+                        	                     rows="3" 
+                        	                     id="parecer_recomendacoes"
+                        	                     ng-model="parecer.recomendacoes">
+                        	         </textarea>
+                        	    </div>
+                        	</div>  
+                        </div>
+						<div class="row">
+                        	<div class="col-lg-12">
+                    			<div class="form-group">
+                    				<div class="row">
+	                        			<label class="control-label col-lg-12"> Parecer sobre o risco Atual </label>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="parecer_atualExcelente"
+	                        			                  ng-model="parecer.atualExcelente"> Excelente
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="parecer_atualBom"
+	                        			                  ng-model="parecer.atualBom"> Bom
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="parecer_atualRegular"
+	                        			                  ng-model="parecer.atualRegular"> Regular
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="parecer_atualRuim"
+	                        			                  ng-model="parecer.atualRuim"> Ruim
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="parecer_atualPessimo"
+	                        			                  ng-model="parecer.atualPessimo"> Péssimo
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+                        			</div>
+                        		</div>
+                        	</div>
+                        </div>
+                        <div class="row">
+                        	<div class="col-lg-12">
+                    			<div class="form-group">
+                    				<div class="row">
+	                        			<label class="control-label col-lg-12"> Parecer sobre o risco Futuro: </label>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="parecer_futuroExcelente"
+	                        			                  ng-model="parecer.futuroExcelente"> Excelente
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="parecer_futuroBom"
+	                        			                  ng-model="parecer.futuroBom"> Bom
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="parecer_futuroRegular"
+	                        			                  ng-model="parecer.futuroRegular"> Regular
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="parecer_futuroRuim"
+	                        			                  ng-model="parecer.futuroRuim"> Ruim
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="parecer_futuroPessimo"
+	                        			                  ng-model="parecer.futuroPessimo"> Péssimo
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+                        			</div>
+                        		</div>
+                        	</div>
+                        </div>                        
+                    </div>    
+                </div>    
+            </div>    
+        </div>
+
+
+        <!-- ----------------------------------------------------------------
+
+				DESMORONAMENTO
+
+            Garantia desmoronamento
+
+         -------------------------------------------------------------------- -->          
+        <div class="row">
+              <div class="col-lg-12">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading">
+                          <h3 class="panel-title"> Garantia desmoronamento </h3>
+                      </div>
+                      <div class="panel-body">
+                        <div class="row">
+                        	<div class="col-lg-3">
+                    			<div class="row">
+                        			<div class="form-group">
+                        				<label class="control-label col-lg-12">Ocupção</label>
+                        				<div class="col-lg-12">
+                    					    <div class="checkbox">
+                    					       <label class="control-label">
+                    					           <input type="checkbox" 
+                    					                  id="desmoronamento_ocupacaoResidencial"
+                    					                  ng-model="desmoronamento.ocupacaoResidencial"> Residêncial
+                    					       </label>
+                    					   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_ocupacaoComercial"
+                        				                  ng-model="desmoronamento.ocupacaoComercial"> Comercial
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_ocupacaoIndustrial"
+                        				                  ng-model="desmoronamento.ocupacaoIndustrial"> Indústrial
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_ocupacaoMista"
+                        				                  ng-model="desmoronamento.ocupacaoMista"> Mista
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        			</div>
+                        		</div>
+                        	</div>
+	                        <div class="col-lg-3">
+                    			<div class="row">
+                        			<div class="form-group">
+                        				<label class="control-label col-lg-12">Qualidade de Construção</label>
+                        				<div class="col-lg-12">
+                    					    <div class="checkbox">
+                    					       <label class="control-label">
+                    					           <input type="checkbox" 
+                    					                  id="desmoronamento_qualidadeOtimo"
+                    					                  ng-model="desmoronamento.qualidadeOtimo"> Ótima
+                    					       </label>
+                    					   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_qualidadeBom"
+                        				                  ng-model="desmoronamento.qualidadeBom"> Boa
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_qualidadeRegular"
+                        				                  ng-model="desmoronamento.qualidadeRegular"> Regular
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_qualidadePessima"
+                        				                  ng-model="desmoronamento.qualidadePessima"> Péssima
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        			</div>
+                        		</div>
+                        	</div>
+                        	<div class="col-lg-3">
+                    			<div class="row">
+                        			<div class="form-group">
+                        				<label class="control-label col-lg-12">Tipo conforme a TSIB</label>
+                        				<div class="col-lg-12">
+                    					    <div class="checkbox">
+                    					       <label class="control-label">
+                    					           <input type="checkbox" 
+                    					                  id="desmoronamento_tsibSuperior"
+                    					                  ng-model="desmoronamento.tsibSuperior"> Superior
+                    					       </label>
+                    					   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_tsibSolida"
+                        				                  ng-model="desmoronamento.tsibSolida"> Sólida
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_tsibMista"
+                        				                  ng-model="desmoronamento.tsibMista"> Mista
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_tsibInferior"
+                        				                  ng-model="desmoronamento.tsibInferior"> Inferior
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        			</div>
+                        		</div>
+                        	</div>
+							<div class="col-lg-3">
+                    			<div class="row">
+                        			<div class="form-group">
+                        				<label class="control-label col-lg-12"> Conservação </label>
+                        				<div class="col-lg-12">
+                    					    <div class="checkbox">
+                    					       <label class="control-label">
+                    					           <input type="checkbox" 
+                    					                  id="desmoronamento_conservacaoOtimo"
+                    					                  ng-model="desmoronamento.conservacaoOtimo"> Ótima
+                    					       </label>
+                    					   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_conservacaoBom"
+                        				                  ng-model="desmoronamento.conservacaoBom"> Boa
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_conservacaoRegular"
+                        				                  ng-model="desmoronamento.conservacaoRegular"> Regular
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        				<div class="col-lg-12">
+                        				    <div class="checkbox">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_conservacaoPessima"
+                        				                  ng-model="desmoronamento.conservacaoPessima"> Péssima
+                        				       </label>
+                        				   </div>
+                        				</div>
+                        			</div>
+                        		</div>
+                        	</div>                        	
+                        </div> 
+                        <div class="row">
+                        	<div class="col-lg-4">
+                        		<div class="form-group label-static">
+                        		    <label for="desmoronamento_areaConstruida" class="control-label">
+                        				Área construída ou ocupada
+                        		    </label>
+                        		    <input type="text" 
+                        			    class="form-control" 
+                        			    id="desmoronamento_areaConstruida"
+                        			    ng-model="desmoronamento.areaConstruida"
+                        			    name="desmoronamento_areaConstruida" >
+                        		</div>
+                        	</div>
+                        	<div class="col-lg-4">
+                        		<div class="form-group label-static">
+                        		    <label for="desmoronamento_areaPavimento" class="control-label">
+                        				Área por pavimento
+                        		    </label>
+                        		    <input type="text" 
+                        			    class="form-control" 
+                        			    id="desmoronamento_areaPavimento"
+                        			    ng-model="desmoronamento.areaPavimento"
+                        			    name="desmoronamento_areaPavimento" >
+                        		</div>
+                        	</div>
+                        	<div class="col-lg-4">
+                        		<div class="form-group label-static">
+                        		    <label for="desmoronamento_areaPavimento" class="control-label">
+                        				Idade do imóvel
+                        		    </label>
+                        		    <input type="text" 
+                        			    class="form-control" 
+                        			    id="desmoronamento_idadeImovel"
+                        			    ng-model="desmoronamento.idadeImovel"
+                        			    name="desmoronamento_idadeImovel">
+                        		</div>
+                        	</div>
+                        </div>  					                             
+                    </div>    
+                </div>    
+            </div>    
+        </div>    
+
+
+        <!-- ----------------------
+            Lesões estruturais
+         ------------------------ -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Condições do terreno </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                        	<div class="col-lg-12">
+                        		<div class="form-group">
+                        			<div class="row">
+                        				<div class="col-lg-12 hidden-sm hidden-xs">
+                        					<label class=" col-lg-3 control-label "></label>
+                        					<label class=" col-lg-2 control-label">não há</label>
+                        					<label class=" col-lg-2 col-lg-offset-3 control-label">poucas</label>
+                        					<label class=" col-lg-2 col-lg-offset-3 control-label">muitas</label>
+                        					<label class=" col-lg-2 col-lg-offset-3 control-label">exessivas</label>
+                        				</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-lg-12">
+                    						<div class="row">
+		                    					<label class="control-label col-lg-2">Aparentemente Estabilizadas</label>
+		                						<div class="col-lg-1 hidden-xs hidden-sm">
+		                							<label class="control-label col-lg-1 pull-right" style="margin:30px 30px 0 0;">
+		                								Antigas
+		                							</label>
+		                						</div>
+		                						<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left:10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_estabilizadaAntigoNaoHa"
+		                        				                  ng-model="desmoronamento.estabilizadaAntigoNaoHa">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+		                    					<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left: 10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_estabilizadaAntigoPoucas"
+		                        				                  ng-model="desmoronamento.estabilizadaAntigoPoucas">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+		                    					<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left: 10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_estabilizadaAntigoMuitas"
+		                        				                  ng-model="desmoronamento.estabilizadaAntigoMuitas">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+		                    					<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left: 10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_estabilizadaAntigoExcessivas"
+		                        				                  ng-model="desmoronamento.estabilizadaAntigoExcessivas">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+	                    					</div>
+	                    					<div class="row">
+		                    					<label class="control-label col-lg-2"></label>
+		                						<div class="col-lg-1 hidden-xs hidden-sm">
+		                							<label class="control-label col-lg-1 pull-right" style="margin:30px 30px 0 0;">
+		                								Recentes
+		                							</label>
+		                						</div>
+		                						<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left:10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_estabilizadaRecenteNaoHa"
+		                        				                  ng-model="desmoronamento.estabilizadaRecenteNaoHa">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+		                    					<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left: 10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_estabilizadaRecentePoucas"
+		                        				                  ng-model="desmoronamento.estabilizadaRecentePoucas">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+		                    					<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left: 10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_estabilizadaRecenteMuitas"
+		                        				                  ng-model="desmoronamento.estabilizadaRecenteMuitas">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+		                    					<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left: 10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_estabilizadaRecenteExcessivas"
+		                        				                  ng-model="desmoronamento.estabilizadaRecenteExcessivas">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+	                    					</div>
+                    					</div>
+                        			</div>
+                    			</div>
+                    		</div>
+                		</div>
+                        <div class="row">
+                        	<div class="col-lg-12">
+                        		<div class="form-group">
+                        			<div class="row">
+                        				<div class="col-lg-12 hidden-sm hidden-xs">
+                        					<label class=" col-lg-3 control-label "></label>
+                        					<label class=" col-lg-2 control-label">não há</label>
+                        					<label class=" col-lg-2 col-lg-offset-3 control-label">poucas</label>
+                        					<label class=" col-lg-2 col-lg-offset-3 control-label">muitas</label>
+                        					<label class=" col-lg-2 col-lg-offset-3 control-label">exessivas</label>
+                        				</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-lg-12">
+                    						<div class="row">
+		                    					<label class="control-label col-lg-2">De estabilidade duvidosa</label>
+		                						<div class="col-lg-1 hidden-xs hidden-sm">
+		                							<label class="control-label col-lg-1 pull-right" style="margin:30px 30px 0 0;">
+		                								Antigas
+		                							</label>
+		                						</div>
+		                						<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left:10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_duvidosaAntigoNaoHa"
+		                        				                  ng-model="desmoronamento.duvidosaAntigoNaoHa">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+		                    					<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left: 10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_duvidosaAntigoPoucas"
+		                        				                  ng-model="desmoronamento.duvidosaAntigoPoucas">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+		                    					<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left: 10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_duvidosaAntigoMuitas"
+		                        				                  ng-model="desmoronamento.duvidosaAntigoMuitas">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+		                    					<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left: 10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_duvidosaAntigoExcessivas"
+		                        				                  ng-model="desmoronamento.duvidosaAntigoExcessivas">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+	                    					</div>
+	                    					<div class="row">
+		                    					<label class="control-label col-lg-2"></label>
+		                						<div class="col-lg-1 hidden-xs hidden-sm">
+		                							<label class="control-label col-lg-1 pull-right" style="margin:30px 30px 0 0;">
+		                								Recentes
+		                							</label>
+		                						</div>
+		                						<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left:10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_duvidosaRecenteNaoHa"
+		                        				                  ng-model="desmoronamento.duvidosaRecenteNaoHa">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+		                    					<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left: 10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_duvidosaRecentePoucas"
+		                        				                  ng-model="desmoronamento.duvidosaRecentePoucas">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+		                    					<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left: 10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_duvidosaRecenteMuitas"
+		                        				                  ng-model="desmoronamento.duvidosaRecenteMuitas">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+		                    					<div class="col-lg-2">
+		                        				    <div class="checkbox" style="margin-left: 10px">
+		                        				       <label class="control-label">
+		                        				           <input type="checkbox" 
+		                        				                  id="desmoronamento_duvidosaRecenteExcessivas"
+		                        				                  ng-model="desmoronamento.duvidosaRecenteExcessivas">
+		                        				       </label>
+		                        					</div>
+		                    					</div>
+	                    					</div>
+                    					</div>
+                        			</div>
+                    			</div>
+                    		</div>
+                		</div>
+                    </div>
+                </div>    
+            </div>    
+        </div> 
+
+
+        <!-- ----------------------
+            Condições do terreno Desmoronamento
+         ------------------------ -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Condições do terreno </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                        	<div class="col-lg-12">
+                        		<div class="form-group">
+                        			<div class="row">
+                        				<div class="col-lg-12 hidden-sm hidden-xs">
+                        					<label class=" col-lg-1 control-label "></label>
+                        					<label class=" col-lg-2 control-label">Favorável</label>
+                        					<label class=" col-lg-2 col-lg-offset-1 control-label">Desfavorável</label>
+                        					<label class=" col-lg-2 col-lg-offset-1 control-label">Muito desfavorável</label>
+                        				</div>
+                    				</div>
+                    				<div class="row">
+                    					<label class="control-label col-lg-1">Natureza</label>
+                						<div class="col-lg-2">
+                        				    <div class="checkbox" style="margin-left: 10px">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_naturezaFavoralvel"
+                        				                  ng-model="desmoronamento.natureza">
+                        				       </label>
+                        					</div>
+                    					</div>
+                    					<div class="col-lg-2">
+                        				    <div class="checkbox" style="margin-left: 10px">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_naturezaDesfavoravel"
+                        				                  ng-model="desmoronamento.naturezaDesfavoravel">
+                        				       </label>
+                        					</div>
+                    					</div>
+                    					<div class="col-lg-2">
+                        				    <div class="checkbox" style="margin-left: 10px">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_naturezaMuitoDesfavoravel"
+                        				                  ng-model="desmoronamento.naturezaMuitoDesfavoravel">
+                        				       </label>
+                        					</div>
+                    					</div>
+                        			</div>
+                    				<div class="row">
+                    					<label class="control-label col-lg-1">Topografia</label>
+                						<div class="col-lg-2">
+                        				    <div class="checkbox" style="margin-left: 10px">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_topografiaFavoralvel"
+                        				                  ng-model="desmoronamento.topografia">
+                        				       </label>
+                        					</div>
+                    					</div>
+                    					<div class="col-lg-2">
+                        				    <div class="checkbox" style="margin-left: 10px">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_topografiaDesfavoravel"
+                        				                  ng-model="desmoronamento.topografiaDesfavoravel">
+                        				       </label>
+                        					</div>
+                    					</div>
+                    					<div class="col-lg-2">
+                        				    <div class="checkbox" style="margin-left: 10px">
+                        				       <label class="control-label">
+                        				           <input type="checkbox" 
+                        				                  id="desmoronamento_topografiaMuitoDesfavoravel"
+                        				                  ng-model="desmoronamento.topografiaMuitoDesfavoravel">
+                        				       </label>
+                        					</div>
+                    					</div>
+                        			</div>  
+                        		</div>
+                        	</div>	
+                        </div>    
+                    </div>
+                </div>    
+            </div>    
+        </div>  
+
+        <!-- ----------------------
+            Condições Extras Desmoronamento
+         ------------------------ -->
+         <div class="row">
+             <div class="col-lg-12">
+                 <div class="panel panel-primary">
+                     <div class="panel-heading">
+                         <h3 class="panel-title"> Dados </h3>
+                     </div>
+                     <div class="panel-body">
+						<div class="row">
+                        	<div class="col-lg-12">
+                    			<div class="form-group">
+                    				<div class="row">
+	                        			<label class="control-label col-lg-12"> Adjacência do Risco </label>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="desmoronamento_extraTerroBaldio"
+	                        			                  ng-model="desmoronamento.extraTerroBaldio"> Terreno baldio
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="desmoronamento_extraBarreiraPedreira"
+	                        			                  ng-model="desmoronamento.extraBarreiraPedreira"> Barreira de Pedreira
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+                        			</div>
+                        			<div class="row">
+                        				<div class="col-lg-12 form-group">
+                        				    <div class="togglebutton">
+                        				         <label>
+                        				            O imóvel pode ser atingido por material  desagregado, rocha decomposta, etc..
+                        				            <input type="checkbox"
+                        				                    id="desmoronamento_imovelAtingidoMaterial"
+                        				                    ng-model="desmoronamento.imovelAtingidoMaterial"> 
+                        				        </label>
+                        				    </div>
+                        				</div>
+                        				<div class="col-lg-12 form-group">
+                        				    <div class="togglebutton">
+                        				         <label>
+                        				            Existência de aeroporto nas proximidades
+                        				            <input type="checkbox"
+                        				                    id="desmoronamento_Aeroporto"
+                        				                    ng-model="desmoronamento.Aeroporto"> 
+                        				        </label>
+                        				    </div>
+                        				</div>
+                        				<div class="col-lg-12 form-group">
+                        				    <div class="togglebutton">
+                        				         <label>
+                        				            Situa-se na direção da pista
+                        				            <input type="checkbox"
+                        				                    id="desmoronamento_direcaoPista"
+                        				                    ng-model="desmoronamento.direcaoPista"> 
+                        				        </label>
+                        				    </div>
+                        				</div>
+                        				<div class="col-lg-12 form-group">
+                        				    <div class="togglebutton">
+                        				         <label>
+                        				            Às margens de rodovia/ferrovia
+                        				            <input type="checkbox"
+                        				                    id="desmoronamento_margensRodoviasFerrovias"
+                        				                    ng-model="desmoronamento.margensRodoviasFerrovias"> 
+                        				        </label>
+                        				    </div>
+                        				</div>
+                        			</div>
+                        			<div class="row">
+                        				<div class="col-lg-4">
+                        					<div class="form-group label-static">
+                        					    <label for="desmoronamento_distanciaAmeaca" class="control-label">
+                        							Distância horizontal do prédio ao ponto que constitui ameaça em metros
+                        					    </label>
+                        					    <input type="text" 
+                        						    class="form-control" 
+                        						    id="desmoronamento_distanciaAmeaca"
+                        						    ng-model="desmoronamento.distanciaAmeaca"
+                        						    name="desmoronamento_distanciaAmeaca" >
+                        					</div>
+                        				</div>
+                        				<div class="col-lg-4">
+                        					<div class="form-group label-static">
+                        					    <label for="desmoronamento_AlturaAmeaca" class="control-label">
+                        							Altura do ponto que constitui ameaça em relação a soleira do prédio em metros
+                        					    </label>
+                        					    <input type="text" 
+                        						    class="form-control" 
+                        						    id="desmoronamento_AlturaAmeaca"
+                        						    ng-model="desmoronamento.AlturaAmeaca"
+                        						    name="desmoronamento_AlturaAmeaca" >
+                        					</div>
+                        				</div>
+                        				<div class="col-lg-4">
+                        					<div class="form-group label-static">
+                        					    <label for="desmoronamento_anguloAmeaca" class="control-label">
+                        							Ângulo aproximado da encosta em graus
+                        					    </label>
+                        					    <input type="text" 
+                        						    class="form-control" 
+                        						    id="desmoronamento_anguloAmeaca"
+                        						    ng-model="desmoronamento.anguloAmeaca"
+                        						    name="desmoronamento_anguloAmeaca" >
+                        					</div>
+                        				</div>
+                        			</div>
+			                        <div class="row">
+			                            <div class="col-lg-12">
+			                                <div class="col-lg-3" style="padding: 0 30px 0 0;">
+			                                    <div class="form-group label-static">
+			                                        <label class="control-label">
+			                                           Houve algum sinistro desmoronamento:
+			                                         </label>
+			                                        <div class="btn-group custom-toggle" data-toggle="buttons">
+			                                            <label class="btn btn-success active" ng-click="desmoronamento.isSegurado=false">
+			                                                <input type="radio"
+			                                                       name="options"
+			                                                       autocomplete="off"
+			                                                       checked> Sim
+			                                            </label>
+			                                            <label class="btn btn-danger" ng-click="desmoronamento.isSegurado=true">
+			                                                <input type="radio"
+			                                                       name="options"
+			                                                       autocomplete="off"> Não 
+			                                            </label>
+			                                        </div>
+			                                    </div>
+			                                </div>
+			                                <div class="col-lg-9" style="padding: 0 30px 0 0;" ng-hide="desmoronamento.isSegurado">
+			                                    <div class="form-group label-static">
+			                                        <label class="control-label"> 
+			                                            Descreva sinistro
+			                                        </label>
+			                                        <input type="text"
+			                                               class="form-control"
+			                                               id="desmoronamento_descricaoSinistro"
+			                                               ng-model="desmoronamento.descricaoSinistro"
+			                                               name="desmoronamento_descricaoSinistro"
+			                                               ng-required="desmoronamento.isSegurado">
+			                                        <i class="fa fa-question form-control-feedback"></i>
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </div>                        			
+                        		</div>
+                        	</div>
+                        </div>                         	
+                     </div>    
+                 </div>    
+             </div>    
+         </div>
+
+
+         <!-- ----------------------
+            Quadro de influencias desmoronamento
+         ------------------------ -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Quadro de influências </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                        	<div class="col-lg-12 form-group">
+                        	    <div class="togglebutton">
+                        	         <label>
+                        	            1ª Influência - Curso d água e/ou adutora
+                        	            <input type="checkbox"
+                        	                    id="influencia_cursoAgua"
+                        	                    ng-model="influencia.cursoAgua"> 
+                        	        </label>
+                        	    </div>
+                        	</div>
+                        	<div class="col-lg-12 form-group">
+                        	    <div class="togglebutton">
+                        	         <label>
+                        	            2ª Influência - Conformação topográfica e ocorrência anteriores
+                        	            <input type="checkbox"
+                        	                    id="influencia_conformacaoTopografica"
+                        	                    ng-model="influencia.conformacaoTopografica"> 
+                        	        </label>
+                        	    </div>
+                        	</div>
+                        	<div class="col-lg-12 form-group">
+                        	    <div class="togglebutton">
+                        	         <label>
+                        	            3ª Influência - Telhados e/ou terraços
+                        	            <input type="checkbox"
+                        	                    id="influencia_telhadoTerraco"
+                        	                    ng-model="influencia.telhadoTerraco"> 
+                        	        </label>
+                        	    </div>
+                        	</div>
+                        </div>    
+                    </div>    
+                </div>    
+            </div>    
+        </div>
+
+
+        <!-- ----------------------
+            Parecer Perito Alagamento
+         ------------------------ -->  
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Parecer do perito sobre o risco de desmoronamento </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                        	<div class="form-group">
+                        	    <label for="desmoronamentoParecer_desmorExigencias" class="col-lg-12 control-label">
+                        			Exigências        
+                        	    </label>
+                        	    <div class="col-md-12">
+                        	         <textarea class="form-control" 
+                        	                     rows="3" 
+                        	                     id="desmoronamentoParecer_desmorExigencias"
+                        	                     ng-model="desmoronamentoParecer.desmorExigencias">
+                        	         </textarea>
+                        	    </div>
+                        	</div>  
+                        </div>
+                        <div class="row">
+                        	<div class="form-group">
+                        	    <label for="desmoronamentoParecer_recomendacoes" class="col-lg-12 control-label">
+                        			Recomendações        
+                        	    </label>
+                        	    <div class="col-md-12">
+                        	         <textarea class="form-control" 
+                        	                     rows="3" 
+                        	                     id="desmoronamentoParecer_recomendacoes"
+                        	                     ng-model="desmoronamentoParecer.recomendacoes">
+                        	         </textarea>
+                        	    </div>
+                        	</div>  
+                        </div>
+						<div class="row">
+                        	<div class="col-lg-12">
+                    			<div class="form-group">
+                    				<div class="row">
+	                        			<label class="control-label col-lg-12"> Parecer sobre o risco Atual </label>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="desmoronamentoParecer_atualExcelente"
+	                        			                  ng-model="desmoronamentoParecer.atualExcelente"> Excelente
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="desmoronamentoParecer_atualBom"
+	                        			                  ng-model="desmoronamentoParecer.atualBom"> Bom
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="desmoronamentoParecer_atualRegular"
+	                        			                  ng-model="desmoronamentoParecer.atualRegular"> Regular
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="desmoronamentoParecer_atualRuim"
+	                        			                  ng-model="desmoronamentoParecer.atualRuim"> Ruim
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="desmoronamentoParecer_atualPessimo"
+	                        			                  ng-model="desmoronamentoParecer.atualPessimo"> Péssimo
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+                        			</div>
+                        		</div>
+                        	</div>
+                        </div>
+                        <div class="row">
+                        	<div class="col-lg-12">
+                    			<div class="form-group">
+                    				<div class="row">
+	                        			<label class="control-label col-lg-12"> Parecer sobre o risco Futuro: </label>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="desmoronamentoParecer_futuroExcelente"
+	                        			                  ng-model="desmoronamentoParecer.futuroExcelente"> Excelente
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="desmoronamentoParecer_futuroBom"
+	                        			                  ng-model="desmoronamentoParecer.futuroBom"> Bom
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="desmoronamentoParecer_futuroRegular"
+	                        			                  ng-model="desmoronamentoParecer.futuroRegular"> Regular
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="desmoronamentoParecer_futuroRuim"
+	                        			                  ng-model="desmoronamentoParecer.futuroRuim"> Ruim
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+	                        			<div class="col-lg-2">
+	                        			    <div class="checkbox">
+	                        			       <label class="control-label">
+	                        			           <input type="checkbox" 
+	                        			                  id="desmoronamentoParecer_futuroPessimo"
+	                        			                  ng-model="desmoronamentoParecer.futuroPessimo"> Péssimo
+	                        			       </label>
+	                        			   </div>
+	                        			</div>
+                        			</div>
+                        		</div>
+                        	</div>
+                        </div>                        
+                    </div>    
+                </div>    
+            </div>    
+        </div>  	
+
+
+    </div>
+</div>

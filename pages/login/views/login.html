@@ -1,0 +1,14 @@
+<div class="row container well col-md-4 col-md-offset-4">
+    <form class="form-horizontal" name="loginForm" ng-submit="login()">
+        <fieldset>
+            <legend>Login <i class="fa fa-sign-in" aria-hidden="true"></i></legend>
+
+            <div class="center-block">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="user.email">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Senha" ng-model="user.password">
+
+                <button type="submit" class="btn btn-raised btn-primary pull-right">Entrar</button>
+            </div>
+        </fieldset>
+    </form>
+</div>

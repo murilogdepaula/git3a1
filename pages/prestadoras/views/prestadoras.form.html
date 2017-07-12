@@ -1,0 +1,422 @@
+<div class="row">
+    <div class="container" style="margin-top:50px;">
+        <div class="row">
+            <div class="col-md-1">
+                <a href="javascript:void(0)"
+                   class="btn btn-primary btn-fab"
+                   ui-sref="app.prestadoras"><i class="fa fa-chevron-left"></i></a>
+            </div>
+            <div class="col-md-11">
+                <h2>{{isUpdate ? 'Alterar':'Nova'}} Prestadora</h2>
+            </div>
+        </div>
+
+        <div class="row register-container transparent" style="margin-top: 20px;">
+
+            <div id="register">
+                <div id="prestadora-form" role="form" name="prestadoraForm">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                        <div class="form-group label-static">
+                            <label for="nome" class="control-label">Nome</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="nome"
+                                   ng-model="prestadora.nome"
+                                   name="nome" required>
+                        </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group label-static">
+                                <label for="nome" class="control-label">E-mail</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="email"
+                                       ng-model="prestadora.email"
+                                       name="nome">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group label-static">
+                                <label for="nome" class="control-label">Cidade Base</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="cidade"
+                                       ng-model="prestadora.cidade"
+                                       name="cidade">
+                                <i class="fa fa-map-o form-control-feedback"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group label-static">
+                                <label for="enderecoEstado" class="control-label">UF:</label>
+                                <select class="form-control" ng-model="prestadora.uf"
+                                        id="enderecoEstado"
+                                        uf-options>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="form-group label-static">
+                                <label for="telefone1" class="control-label">Telefone 1</label>
+                                <input mask="ddd:telefone"
+                                        type="text"
+                                       class="form-control"
+                                       id="telefone1"
+                                       ng-model="prestadora.telefone1"
+                                       name="telefone1">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group label-static">
+                                <label for="telefone1" class="control-label">Telefone 2</label>
+                                <input mask="ddd:telefone" type="text"
+                                       class="form-control"
+                                       id="telefone2"
+                                       ng-model="prestadora.telefone2"
+                                       name="telefone2">
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="form-group label-static">
+                                <label for="telefone1" class="control-label">Telefone 3</label>
+                                <input mask="ddd:telefone" type="text"
+                                       class="form-control"
+                                       id="telefone3"
+                                       ng-model="prestadora.telefone3"
+                                       name="telefone3">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Dados Bancários</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="form-group label-static">
+                                            <label for="banco" class="control-label">Banco</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   id="banco"
+                                                   ng-model="prestadora.banco"
+                                                   name="banco">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="form-group label-static">
+                                            <label for="agencia" class="control-label">Agência</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   id="agencia"
+                                                   ng-model="prestadora.agencia"
+                                                   name="agencia">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-group label-static">
+                                            <label for="conta" class="control-label">Conta</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   id="conta"
+                                                   ng-model="prestadora.conta"
+                                                   name="conta">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group label-static">
+                                            <label for="titular" class="control-label">Titular</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   id="titular"
+                                                   ng-model="prestadora.titular"
+                                                   name="titular">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <div class="form-group label-static">
+                                <label for="honorarioAcordado" class="control-label">Honorário Acordado</label>
+                                <input mask-money
+                                        type="text"
+                                       class="form-control"
+                                       id="honorarioAcordado"
+                                       ng-model="prestadora.honorarioAcordado"
+                                       name="honorarioAcordado">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group label-static">
+                                <label for="deslocamentoAcordado" class="control-label">Deslocamento Acordado</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="deslocamentoAcordado"
+                                       ng-model="prestadora.deslocamentoAcordado"
+                                       name="deslocamentoAcordado">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="form-group label-static">
+                                <label for="areaAtendimento" class="control-label">Área de Atendimento</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="areaAtendimento"
+                                       ng-model="prestadora.areaAtendimento"
+                                       name="areaAtendimento">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group label-static">
+                                <label for="observacoes" class="control-label">Observações</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="observacoes"
+                                       ng-model="prestadora.observacoes"
+                                       name="observacoes">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <button id="btn-signup"
+                                ng-click="salvar()"
+                                href="javascript:void(0)"
+                                class="btn btn-raised btn-info pull-right">Salvar</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+        <!----------------------------------------------------------------
+         //-- Modal para adicionar ramos
+         ------------------------------------------------------------------>
+        <script type="text/ng-template" id="seguradoraDialogAddRamo.html">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="cancel()" aria-hidden="true">×</button>
+                <h4 class="modal-title">Adicionar Ramo</h4>
+            </div>
+            <div class="modal-body">
+                <form id="ramo-form" role="form" name="ramoForm">
+                    <div class="row">
+                        <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group label-static">
+                                <label for="nomeRamo" class="control-label">Nome</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="nomeRamo"
+                                       ng-model="ramo.nome"
+                                       name="nome" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group label-static">
+                                <label for="emailResponsavelRamo" class="control-label">E-mail responsável</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="emailResponsavelRamo"
+                                       ng-model="ramo.emailResponsavel"
+                                       name="emailResponsavelRamo">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group label-static">
+                                <label for="valorFrustado" class="control-label">Valor Frustado</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="valorFrustado"
+                                       ng-model="ramo.frustado"
+                                       name="valorFrustado"
+                                       mask-money>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group label-static">
+                                <label for="valorKmSemAutorizacaoPrevia" class="control-label">Quantidade Km sem autorização prévia</label>
+                                <input type="text"
+                                       number-format=""
+                                       class="form-control"
+                                       id="valorKmSemAutorizacaoPrevia"
+                                       ng-model="ramo.kmSemAutorizacaoPrevia"
+                                       name="valorKmSemAutorizacaoPrevia">
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="row" style="padding: 30px">
+                            <h4>Descrição valores</h4>
+
+                            <table class="table table-hover table-striped">
+                                <tr ng-repeat="item in ramo.items">
+                                    <td valign="center">{{item.descricao}}</td>
+                                    <td>{{item.valor}}</td>
+                                    <td width="15%">
+                                        <a href="javascript:void(0)"
+                                           class="btn btn-danger btn-sm btn-raised"
+                                           ng-click="deleteItem(item)">
+                                            <i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div ng-show="addItem">
+                                <div class="col-lg-5">
+                                    <div class="form-group label-static">
+                                        <label for="descricaoItem" class="control-label">Descrição</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="descricaoItem"
+                                               ng-model="novoItem.descricao"
+                                               name="descricaoItem">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group label-static">
+                                        <label for="valorItem" class="control-label">Valor</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="valorItem"
+                                               ng-model="novoItem.valor"
+                                               name="valorItem" mask-money>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 pull-right">
+                                    <div class="btn-group btn-group-sm btn-group-raised btn-group-vertical">
+                                        <a href="javascript:void(0)"
+                                           class="btn btn-default"
+                                           ng-click="cancelarAddItem()">
+                                            Cancelar
+                                        </a>
+                                        <a href="javascript:void(0)"
+                                           class="btn btn-success"
+                                           ng-click="salvarItem(novoItem)"><i class="fa fa-check"></i> Salvar</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="javascript:void(0)"
+                               ng-click="addItem = true"
+                               ng-hide="addItem"
+                               class="btn btn-success btn-raised pull-right">
+                                <i class="fa fa-plus"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <hr class="divider"/>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancelar</button>
+                <button type="button" ng-click="ok()" class="btn btn-success btn-raised">Salvar</button>
+            </div>
+        </script>
+
+
+        <!----------------------------------------------------------------
+         //-- Modal para adicionar ramos
+         ------------------------------------------------------------------>
+        <script type="text/ng-template" id="seguradoraDialogConfirmDelRamo.html">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="cancel()" aria-hidden="true">×</button>
+                <h4 class="modal-title">Deseja remover Ramo {{ramo.nome}}?</h4>
+            </div>
+            <div class="modal-body">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group label-static">
+                                    <label for="nomeRamoDel" class="control-label">Nome</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="nomeRamoDel"
+                                           ng-model="ramo.nome"
+                                           name="nome" required
+                                           disabled>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group label-static">
+                                    <label for="emailResponsavelRamoDel" class="control-label">E-mail responsável</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="emailResponsavelRamoDel"
+                                           ng-model="ramo.emailResponsavel"
+                                           name="emailResponsavelRamo" disabled>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="form-group label-static">
+                                    <label for="valorFrustadoDel" class="control-label">Valor Frustado</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="valorFrustadoDel"
+                                           ng-model="ramo.frustado"
+                                           name="valorFrustado"
+                                           mask-money disabled>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group label-static">
+                                    <label for="valorKmSemAutorizacaoPreviaDel" class="control-label">Quantidade Km sem autorização prévia</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           id="valorKmSemAutorizacaoPreviaDel"
+                                           ng-model="ramo.kmSemAutorizacaoPrevia"
+                                           name="valorKmSemAutorizacaoPrevia" disabled>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="padding: 30px">
+                            <h4>Descrição valores</h4>
+
+                            <table class="table table-hover table-striped">
+                                <tr ng-repeat="item in ramo.items">
+                                    <td valign="center">{{item.descricao}}</td>
+                                    <td>{{item.valor}}</td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <hr class="divider"/>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancelar</button>
+                <button type="button" ng-click="ok()" class="btn btn-danger btn-raised">Remover</button>
+            </div>
+        </script>
+
+    </div>
+</div>

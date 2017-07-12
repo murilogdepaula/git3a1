@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <h2 class="col">Allianz</h2>
+
+            <a href="javascript:void(0)"
+               class="btn btn-primary btn-raised"
+               ui-sref="app.planilhas_add"><i class="fa fa-plus"></i> Novo Segurado</a>
+
+            <div class="col col-lg-4 pull-right">
+                <div class="form-group label-static">
+                    <label for="search" class="control-label">Buscar</label>
+                    <input type="text" class="form-control" id="search" name="search" ng-model="search">
+                    <i class="fa fa-search form-control-feedback"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-group" style="margin-top: 30px">
+            <div ng-repeat="u in seguradoras | filter:search">
+                <div class="list-group-item">
+                    <div class="row-action-primary">
+                        <i class="fa fa-file-text-o"></i>
+                    </div>
+                    <div class="row-content">
+                        <div class="least-content">
+                            <div class="btn-group btn-group-raised">
+                                <a href="javascript:void(0)" class="btn btn-default" ui-sref="app.seguradoras_edit({id:u._id})"><i class="fa fa-pencil" ></i></a>
+                                <a href="javascript:void(0)" class="btn btn-danger" ng-click="confirmDeleteSeguradora(u)"><i class="fa fa-trash"></i></a>
+                            </div>
+                        </div>
+                        <h4 class="list-group-item-heading">{{u.nome}}</h4>
+
+                        <p class="list-group-item-text">
+                            <b>Responsável: </b> {{u.responsavel}} - <i>{{u.emailResponsavel}}</i><br/>
+                            {{u.cidade}} - {{u.estado}}
+                        </p>
+                    </div>
+                </div>
+                <div class="list-group-separator"></div>
+            </div>
+        </div>
+
+        <p ng-hide="seguradoras.length != 0"> Nenhuma seguradora encontrada!</p>
+
+
+    </div>
+
+
+    <!----------------------------------------------------------------
+         //-- Modal para confirmar deletar usuario
+         ------------------------------------------------------------------>
+    <script type="text/ng-template" id="seguradoraModalConfirmDelete.html">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="cancel()" aria-hidden="true">×</button>
+            <h4 class="modal-title">Atenção</h4>
+        </div>
+        <div class="modal-body">
+            <p>Tem certeza que deseja remover a Seguradora <b>{{seguradora.nome}}?</b></p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="cancel()">Cancelar</button>
+            <button type="button" ng-click="ok()" class="btn btn-primary btn-delete">Confirmar</button>
+        </div>
+    </script>
+
+</div>

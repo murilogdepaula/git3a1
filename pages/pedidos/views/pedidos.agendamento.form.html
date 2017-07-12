@@ -1,0 +1,288 @@
+<div class="row">
+    <div class="container" style="margin-top:50px;">
+        <div class="row">
+            <div class="col-md-1">
+                <a href="javascript:void(0)"
+                   class="btn btn-primary btn-fab"
+                   ui-sref="app.pedidos"><i class="fa fa-chevron-left"></i></a>
+            </div>
+            <div class="col-md-9">
+                <h2>Dados Agendamento</h2>
+            </div>
+            <div class="col-md-2">
+                <label class="label {{statusPedido.style}}" style="padding: 8px;">
+                    {{statusPedido.description.toUpperCase()}}
+                </label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <ul class="nav nav-tabs" style="margin: 15px 0;">
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_edit({id:pedido._id})">Pedido</a></li>
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_add_agendamento({id:pedido._id})">Agendamento</a></li>
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_add_deslocamento({id:pedido._id})">Deslocamento</a></li>
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_resumo({id:pedido._id})">Resumo</a></li>
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_analista({id:pedido._id})">Área do Analista</a></li>
+            </ul>
+        </div>
+
+        <form id="pedido-agendamento-form" role="form" name="pedidoAgendamentoForm">
+            <a href="javascript:void(0)" class="btn btn-danger btn-raised" ng-click="confirmDeletePedido(u)">Cancelar Pedido <i class="fa fa-trash"></i></a>
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <div class="form-group label-static">
+                        <label for="dataPrimeiroContato" class="control-label">Data 1º Contato:</label>
+                        <input mask="99/99/9999"
+                               type="text"
+                               class="form-control"
+                               id="dataPrimeiroContato"
+                               ng-model="pedido.agendamento.dataPrimeiroContato"
+                               name="dataPrimeiroContato">
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group label-static">
+                        <label for="primeiroContato" class="control-label">Contato:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="primeiroContato"
+                               ng-model="pedido.agendamento.primeiroContato"
+                               name="primeiroContato">
+                    </div>
+                </div>
+
+
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <label for="infoPrimeiroContato" class="control-label">Informações 1º Contato:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="infoPrimeiroContato"
+                               ng-model="pedido.agendamento.infoPrimeiroContato"
+                               name="infoPrimeiroContato">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <div class="form-group label-static">
+                        <label for="dataSegundoContato" class="control-label">Data 2º Contato:</label>
+                        <input mask="99/99/9999"
+                               type="text"
+                               class="form-control"
+                               id="dataSegundoContato"
+                               ng-model="pedido.agendamento.dataSegundoContato"
+                               name="dataSegundoContato">
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group label-static">
+                        <label for="segundoContato" class="control-label">Contato:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="segundoContato"
+                               ng-model="pedido.agendamento.segundoContato"
+                               name="segundoContato">
+                    </div>
+                </div>
+
+
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <label for="infoSegundoContato" class="control-label">Informações 2º Contato:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="infoSegundoContato"
+                               ng-model="pedido.agendamento.infoSegundoContato"
+                               name="infoSegundoContato">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <div class="form-group label-static">
+                        <label for="dataTerceiroContato" class="control-label">Data 3º Contato:</label>
+                        <input mask="99/99/9999"
+                               type="text"
+                               class="form-control"
+                               id="dataTerceiroContato"
+                               ng-model="pedido.agendamento.dataTerceiroContato"
+                               name="dataTerceiroContato">
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group label-static">
+                        <label for="terceiroContato" class="control-label">Contato:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="terceiroContato"
+                               ng-model="pedido.agendamento.terceiroContato"
+                               name="terceiroContato">
+                    </div>
+                </div>
+
+
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <label for="infoTerceiroContato" class="control-label">Informações 3º Contato:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="infoTerceiroContato"
+                               ng-model="pedido.agendamento.infoTerceiroContato"
+                               name="infoTerceiroContato">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <div class="togglebutton">
+                            <label>
+                                Local do Risco: Para o mesmo
+                                <input type="checkbox" id="agendamento_paraOMesmo" ng-model="pedido.agendamento.paraOMesmo">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12" ng-show="!pedido.agendamento.paraOMesmo">
+                    <div class="form-group label-static">
+                        <label for="localRiscoDivergente" class="control-label">Informações local de Risco Divergente:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="localRiscoDivergente"
+                               ng-model="pedido.agendamento.localRiscoDivergente"
+                               name="localRiscoDivergente">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <div class="togglebutton">
+                            <label>
+                                Agendado?
+                                <input type="checkbox" id="agendado" ng-model="pedido.agendamento.agendado">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" ng-show="pedido.agendamento.agendado">
+
+                <div class="col-lg-4">
+                    <div class="form-group label-static">
+                        <label for="contatoNoAgendamento" class="control-label">Contato no Agendamento:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="contatoNoAgendamento"
+                               ng-model="pedido.agendamento.contatoNoAgendamento"
+                               name="contatoNoAgendamento">
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group label-static">
+                        <label for="dataAgendamento" class="control-label">Data Agendamento:</label>
+                        <input mask="99/99/9999" type="text"
+                               class="form-control"
+                               id="dataAgendamento"
+                               ng-model="pedido.agendamento.dataAgendamento"
+                               name="dataAgendamento">
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="form-group label-static">
+                        <label for="horaMarcada" class="control-label">Hora Marcada:</label>
+                        <input type="text" mask="99:99"
+                               class="form-control"
+                               id="horaMarcada"
+                               ng-model="pedido.agendamento.horaMarcada"
+                               name="horaMarcada">
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="form-group label-static">
+                        <div class="checkbox">
+                            <label>
+                                Horario Comercial
+                                <input type="checkbox" ng-model="pedido.agendamento.horarioComercial">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-6">
+                    <div class="form-group label-static">
+                        <label for="quemProcurar" class="control-label">Quem procurar no Local:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="quemProcurar"
+                               ng-model="pedido.agendamento.quemProcurar"
+                               name="quemProcurar">
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group label-static">
+                        <label for="telefoneLocalAgendamento" class="control-label">Telefone de contato local de agendamento:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="telefoneLocalAgendamento"
+                               ng-model="pedido.agendamento.telefoneLocalAgendamento"
+                               name="telefoneLocalAgendamento">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-12">
+                <button id="btn-signup pull-right"
+                        ng-click="salvarAgendamento(pedido)"
+                        href="javascript:void(0)"
+                        class="btn btn-raised btn-info">Salvar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!----------------------------------------------------------------
+         //-- Modal para confirmar deletar pedido
+         ------------------------------------------------------------------>
+    <script type="text/ng-template" id="pedidoModalConfirmDelete.html">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="cancel()" aria-hidden="true">×</button>
+            <h4 class="modal-title">Atenção</h4>
+        </div>
+        <div class="modal-body">
+            <p>Deseja remover pedido {{pedido.nrPedido}}?</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="cancel()">Cancelar</button>
+            <button type="button" ng-click="ok()" class="btn btn-primary btn-delete">Confirmar</button>
+        </div>
+    </script>
+</div>

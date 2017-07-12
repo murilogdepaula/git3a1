@@ -1,0 +1,1664 @@
+<div class="row">
+    <div class="container" style="margin-top:50px;">
+        <div class="row">
+            <div class="col-md-1">
+                <a href="#"
+                   class="btn btn-primary btn-fab"
+                   ui-sref="app.planilhas_condominios"><i class="fa fa-chevron-left"></i></a>
+            </div>
+            <div class="col-md-11">
+                <h2>{{isUpdate ? 'Alterar':'Novo'}} Inspeção de Riscos Condomínios</h2>
+            </div>
+        </div>
+
+        <!-- -------------------
+            Inspecao laudo
+        ------------------------- -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Inspeção de risco laudo </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label for="laudo_filial" class="control-label"> Filial </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="laudo_filial"
+                                            ng-model="laudo.filial"
+                                            name="laudo_filial" >
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label for="laudo_solicitante" class="control-label"> Solicitante Inspeção </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="laudo_solicitante"
+                                            ng-model="laudo.solicitante"
+                                            name="laudo_solicitante" >
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label for="laudo_pedido" class="control-label"> Data pedido </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="laudo_pedido"
+                                            ng-model="laudo.pedido"
+                                            name="laudo_pedido" 
+                                            mask="99/99/9999">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label for="laudo_produtor" class="control-label">
+                                    Produtor - Agência ou corretora
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="laudo_produtor"
+                                            ng-model="laudo.produtor"
+                                            name="laudo_produtor" >
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label for="laudo_nomeInspetor" class="control-label"> 
+                                        Nome do Inspetor
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="laudo_nomeInspetor"
+                                            ng-model="laudo.nomeInspetor"
+                                            name="laudo_nomeInspetor">
+                                </div>
+                            </div>                        
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label for="laudo_inspecao" class="control-label">
+                                        Data Inspeção
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="laudo_inspecao"
+                                            ng-model="laudo.inspecao"
+                                            name="laudo_inspecao" 
+                                            mask="99/99/9999">
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="form-group label-static">
+                                    <label for="laudo_nomeSegurado" class="control-label"> 
+                                        Nome Segurado
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="laudo_nomeSegurado"
+                                            ng-model="laudo.nomeSegurado"
+                                            name="laudo_nomeSegurado">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label for="laudo_cgcCPF" class="control-label">
+                                    CGC/CPF
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="laudo_cgcCPF"
+                                            ng-model="laudo.cgcCPF"
+                                            name="laudo_cgcCPF" >
+                                </div>                        
+                            </div>    
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group label-static">
+                                    <label for="laudo_endereco" class="control-label">
+                                    Endereço
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="laudo_endereco"
+                                            ng-model="laudo.endereco"
+                                            name="laudo_endereco" >
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label for="laudo_cidade" class="control-label">
+                                        Cidade
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="laudo_cidade"
+                                            ng-model="laudo.cidade"
+                                            name="laudo_cidade" >
+                                </div>
+                            </div>
+                            <div class="col-lg-3 ">
+                                <div class="form-group label-static">
+                                    <label for="laudo_estado" class="control-label">UF</label>
+                                    <select class="form-control" ng-model="pedido.proponente.estado"
+                                            id="laudo_estado"
+                                            uf-options>
+                                    </select>
+                                    <i class="fa fa-caret-down form-control-feedback"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group label-static">
+                                    <label for="laudo_contato" class="control-label">
+                                        Contato
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="laudo_contato"
+                                            ng-model="laudo.contato"
+                                            name="laudo_contato" >
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group label-static">
+                                    <label for="laudo_telefone" class="control-label">
+                                        Telefone
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="laudo_telefone"
+                                            ng-model="laudo.telefone"
+                                            name="laudo_telefone" >
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-4" style="padding: 0 30px 0 0;">
+                                    <div class="form-group label-static">
+                                        <label class="control-label">
+                                            O Valor em risco difere aprecialmente da IS Incêndio: 
+                                         </label>
+                                        <div class="btn-group custom-toggle" data-toggle="buttons">
+                                            <label class="btn btn-success active" ng-click="laudoVr.isSegurado=false">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"
+                                                       checked> Sim
+                                            </label>
+                                            <label class="btn btn-danger" ng-click="laudoVr.isSegurado=true">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"> Não 
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8" style="padding: 0 30px 0 0;" ng-hide="laudoVr.isSegurado">
+                                    <div class="form-group label-static">
+                                        <label class="control-label"> 
+                                            VR estimado
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="laudo_vrEstimado"
+                                               ng-model="laudo.vrEstimado"
+                                               name="laudo_vrEstimado"
+                                               ng-required="laudoVr.isSegurado"
+                                               mask-money>
+                                        <i class="fa fa-question form-control-feedback"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-4" style="padding: 0 30px 0 0;">
+                                    <div class="form-group label-static">
+                                        <label class="control-label">
+                                            Outros seguros em vigor para o mesmo local:
+                                         </label>
+                                        <div class="btn-group custom-toggle" data-toggle="buttons">
+                                            <label class="btn btn-success active" ng-click="laudoImportanciaSeguro.isSegurado=false">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"
+                                                       checked> Sim
+                                            </label>
+                                            <label class="btn btn-danger" ng-click="laudoImportanciaSeguro.isSegurado=true">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"> Não 
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8" style="padding: 0 30px 0 0;" ng-hide="laudoImportanciaSeguro.isSegurado">
+                                    <div class="form-group label-static">
+                                        <label class="control-label"> 
+                                            Importância Segurada
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="laudo_importanciaSeguro"
+                                               ng-model="laudo.importanciaSeguro"
+                                               name="laudo_importanciaSeguro"
+                                               ng-required="laudoImportanciaSeguro.isSegurado"
+                                               mask-money>
+                                        <i class="fa fa-question form-control-feedback"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-4" style="padding: 0 30px 0 0;">
+                                    <div class="form-group label-static">
+                                        <label class="control-label">
+                                            Experiência sinistral (últimos 5 anos):
+                                         </label>
+                                        <div class="btn-group custom-toggle" data-toggle="buttons">
+                                            <label class="btn btn-success active" ng-click="laudoSinistral.isSegurado=false">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"
+                                                       checked> Sim
+                                            </label>
+                                            <label class="btn btn-danger" ng-click="laudoSinistral.isSegurado=true">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"> Não 
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8" style="padding: 0 30px 0 0;" ng-hide="laudoSinistral.isSegurado">
+                                    <div class="form-group label-static">
+                                        <label class="control-label"> 
+                                            Valor prejuízos
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="laudo_prejuizo"
+                                               ng-model="laudo.prejuizo"
+                                               name="laudo_prejuizo"
+                                               ng-required="laudoSinistral.isSegurado"
+                                               mask-money>
+                                        <i class="fa fa-question form-control-feedback"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group" ng-hide="laudoSinistral.isSegurado">
+                                <label for="laudo_eventosSinistral" class="col-lg-12 control-label">
+                                    Descrever eventos, causas, valor das indenizaçoes e datas das ocorrências:
+                                </label>
+                                <div class="col-md-12">
+                                     <textarea class="form-control" 
+                                                 rows="3" 
+                                                 id="laudo_eventosSinistral"
+                                                 ng-model="laudo.eventosSinistral"
+                                                 ng-required="laudoSinistral.isSegurado">
+                                     </textarea>
+                                </div>
+                            </div>  
+                        </div>  
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <div class="row">
+                                                <div class="col-lg-12"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="laudo_shoppingCenter"
+                                                                   ng-model="laudo.shoppingCenter"> Shopping Center
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="laudo_condominioComercio"
+                                                                   ng-model="laudo.condominioComercio"> Condomínio Comercial
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="row">
+                                                <div class="col-lg-12"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="laudo_Proprietario"
+                                                                   ng-model="laudo.Proprietario"> Proprietário
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="laudo_lojasServico"
+                                                                   ng-model="laudo.lojasServico"> Lojas e Serviços
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="row">
+                                                <div class="col-lg-12"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="laudo_escritorio"
+                                                                   ng-model="laudo.escritorio"> Escritórios/consultórios
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="laudo_inquilino"
+                                                                   ng-model="laudo.inquilino"> Inquilino
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="row">
+                                                <div class="col-lg-12" ng-init="laudo.IsCondominioMisto=false"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="laudo_IsCondominio"
+                                                                   ng-model="laudo.IsCondominioMisto"> Condomínio Misto
+                                                       </label>
+                                                    </div>
+                                                    <div class="col-lg-6" ng-hide="!laudo.IsCondominioMisto"> 
+                                                        <div class="checkbox">
+                                                           <label class="control-label">
+                                                               <input type="checkbox" 
+                                                                       id="laudo_condominioMaior"
+                                                                       ng-model="laudo.condominioMaior"> + de 15%
+                                                           </label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                           <label class="control-label">
+                                                               <input type="checkbox" 
+                                                                       id="laudo_condominioMenor"
+                                                                       ng-model="laudo.condominioMenor"> - de 15%
+                                                           </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12" ng-init="IsHotel=false"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="laudo_rodoviaFerrovia"
+                                                                   ng-model="IsHotel"> Hotel
+                                                       </label>
+                                                    </div>
+                                                    <div class="col-lg-6" ng-hide="!IsHotel"> 
+                                                        <div class="checkbox">
+                                                           <label class="control-label">
+                                                               <input type="checkbox" 
+                                                                       id="laudo_hotel"
+                                                                       ng-model="laudo.hotel"> Hotel
+                                                           </label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                           <label class="control-label">
+                                                               <input type="checkbox" 
+                                                                       id="laudo_flat"
+                                                                       ng-model="laudo.flat"> Flat
+                                                           </label>
+                                                        </div>
+                                                    </div>
+                                                </div>                                            
+                                            </div>                                            
+                                        </div>                                            
+                                    </div>                                            
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 form-group">
+                                        <div class="form-group label-static">
+                                            <label for="laudo_areaConstruida" class="control-label">
+                                                Área construída
+                                            </label>
+                                            <input type="text" 
+                                                    class="form-control" 
+                                                    id="laudo_areaConstruida"
+                                                    ng-model="laudo.areaConstruida"
+                                                    name="laudo_areaConstruida" >
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 form-group">
+                                        <div class="form-group label-static">
+                                            <label for="laudo_idadeImovel" class="control-label">
+                                                Idade imóvel
+                                            </label>
+                                            <input type="text" 
+                                                    class="form-control" 
+                                                    id="laudo_idadeImovel"
+                                                    ng-model="laudo.idadeImovel"
+                                                    name="laudo_idadeImovel">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 form-group">
+                                        <div class="form-group label-static">
+                                            <label for="laudo_pavimentos" class="control-label">
+                                                Nº Pavimentos
+                                            </label>
+                                            <input type="text" 
+                                                    class="form-control" 
+                                                    id="laudo_pavimentos"
+                                                    ng-model="laudo.pavimentos"
+                                                    name="laudo_pavimentos">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 form-group">
+                                        <div class="form-group label-static">
+                                            <label for="laudo_pavimentos" class="control-label">
+                                                Tempo no local
+                                            </label>
+                                            <input type="text" 
+                                                    class="form-control" 
+                                                    id="laudo_pavimentos"
+                                                    ng-model="laudo.pavimentos"
+                                                    name="laudo_pavimentos">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label for="laudo_construcaoPredominante" class="control-label">
+                                    Construção Predominante
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="laudo_construcaoPredominante"
+                                            ng-model="laudo.construcaoPredominante"
+                                            name="laudo_construcaoPredominante" >
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label for="laudo_conservacaoPredial" class="control-label">
+                                        Conservação predial
+                                    </label>
+                                    <input type="text" 
+                                        class="form-control" 
+                                        id="laudo_conservacaoPredial"
+                                        ng-model="laudo.conservacaoPredial"
+                                        name="laudo_conservacaoPredial" >
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label for="laudo_exposicaoVentos" class="control-label">
+                                        Exposição a ventos
+                                    </label>
+                                    <input type="text" 
+                                        class="form-control" 
+                                        id="laudo_exposicaoVentos"
+                                        ng-model="laudo.exposicaoVentos"
+                                        name="laudo_exposicaoVentos" >
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label for="laudo_exposicaoImpactos" class="control-label">
+                                        Exposição a impactos
+                                    </label>
+                                    <input type="text" 
+                                        class="form-control" 
+                                        id="laudo_exposicaoImpactos"
+                                        ng-model="laudo.exposicaoImpactos"
+                                        name="laudo_exposicaoImpactos" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label for="laudo_instalacaoEletrica" class="control-label">
+                                        Instalações elétricas
+                                    </label>
+                                    <input type="text" 
+                                        class="form-control" 
+                                        id="laudo_instalacaoEletrica"
+                                        ng-model="laudo.instalacaoEletrica"
+                                        name="laudo_instalacaoEletrica" >
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label for="laudo_conservacaoInstalacao" class="control-label">
+                                        Conservação instalações
+                                    </label>
+                                    <input type="text" 
+                                        class="form-control" 
+                                        id="laudo_conservacaoInstalacao"
+                                        ng-model="laudo.conservacaoInstalacao"
+                                        name="laudo_conservacaoInstalacao" >
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label for="laudo_tipoEstacionamento" class="control-label">
+                                        Tipo de estacionamento
+                                    </label>
+                                    <input type="text" 
+                                        class="form-control" 
+                                        id="laudo_tipoEstacionamento"
+                                        ng-model="laudo.tipoEstacionamento"
+                                        name="laudo_tipoEstacionamento" >
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label for="laudo_localizacaoRisco" class="control-label">
+                                        Localização do Risco | Imóvel
+                                    </label>
+                                    <input type="text" 
+                                        class="form-control" 
+                                        id="laudo_localizacaoRisco"
+                                        ng-model="laudo.localizacaoRisco"
+                                        name="laudo_localizacaoRisco" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        O risco está em comunicação direta ou faz parte de locais onde existam ocupações mais agravantes do que a atividade principal do segurado
+                                        <input type="checkbox"
+                                                id="laudo_ocupacaoAgravante"
+                                                ng-model="laudo.ocupacaoAgravante"> 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Existem no risco edificações com classes de construção diferentes da classe predominante
+                                        <input type="checkbox"
+                                                id="laudo_edificacaoClasseDiferente"
+                                                ng-model="laudo.edificacaoClasseDiferente"> 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="laudo_descricaoRiscos" class="col-lg-12 control-label">
+                                  Descrever quais e comentar se isto representa agravação do risco:
+                                </label>
+                                <div class="col-md-12">
+                                     <textarea class="form-control" 
+                                                 rows="3" 
+                                                 id="laudo_descricaoRiscos"
+                                                 ng-model="laudo.descricaoRiscos">
+                                     </textarea>
+                                </div>
+                            </div>  
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="control-label col-lg-12">
+                                        O risco está localizado à beira de e/ou existem a seu arredor e/ou nas proximidades do mesmo:
+                                    </label>
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_terrenoBaldio"
+                                                                  ng-model="laudo.terrenoBaldio"> Terrenos Baldios
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_parques"
+                                                                  ng-model="laudo.parques"> Parques/praças
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_propriedadeRurais"
+                                                                  ng-model="laudo.propriedadeRurais"> Propriedades rurais
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_rodoviasFerrovias"
+                                                                  ng-model="laudo.rodoviasFerrovias"> Rodovias/ferrovias
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_ruasMovimentadas"
+                                                                  ng-model="laudo.ruasMovimentadas"> Ruas movimentadas
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_escolas"
+                                                                  ng-model="laudo.escolas"> Escolas
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_favelas"
+                                                                  ng-model="laudo.favelas"> Favelas
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_florestas"
+                                                                  ng-model="laudo.florestas"> Florestas
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_campus"
+                                                                  ng-model="laudo.campus"> Campus
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_estadioFutebol"
+                                                                  ng-model="laudo.estadioFutebol"> Estádios futebol
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_aeroporto"
+                                                                  ng-model="laudo.aeroporto"> Aeroporto
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_rodoviaria"
+                                                                  ng-model="laudo.rodoviaria"> Rodoviária
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_ferroviaria"
+                                                                  ng-model="laudo.ferroviaria"> Ferroviária
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_penitenciarias"
+                                                                  ng-model="laudo.penitenciarias"> Penitenciárias
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_delegacias"
+                                                                  ng-model="laudo.delegacias"> Delegacias
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_industria"
+                                                                  ng-model="laudo.industria"> Indústria
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_lombadas"
+                                                                  ng-model="laudo.lombadas"> Lombadas
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_depositoGLP"
+                                                                  ng-model="laudo.depositoGLP"> Depósito GLP
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_loteamentoDesabitados"
+                                                                  ng-model="laudo.loteamentoDesabitados"> Loteamentos desabitados
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_predioHistorico"
+                                                                  ng-model="laudo.predioHistorico"> Prédio histórico/tombado
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_construcaoObras"
+                                                                  ng-model="laudo.construcaoObras"> Construção (obras)
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_postosGasolina"
+                                                                  ng-model="laudo.postosGasolina"> Postos de Gasolina
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="laudo_ruasIluminadas"
+                                                                  ng-model="laudo.ruasIluminadas"> Ruas bem iluminadas
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-12">Na região onde o risco está instalado há incidência de:</label>
+                                        <div class="col-lg-2">
+                                            <div class="checkbox">
+                                               <label class="control-label">
+                                                   <input type="checkbox" 
+                                                          id="laudo_roubosFurtos"
+                                                          ng-model="laudo.roubosFurtos"> Roubos/furtos
+                                               </label>
+                                           </div>
+                                        </div>  
+                                         <div class="col-lg-2">
+                                            <div class="checkbox">
+                                               <label class="control-label">
+                                                   <input type="checkbox" 
+                                                          id="laudo_Vendavais"
+                                                          ng-model="laudo.Vendavais"> Vendavais
+                                               </label>
+                                           </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="checkbox">
+                                               <label class="control-label">
+                                                   <input type="checkbox" 
+                                                          id="laudo_granizo"
+                                                          ng-model="laudo.granizo"> Granizo
+                                               </label>
+                                           </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="checkbox">
+                                               <label class="control-label">
+                                                   <input type="checkbox" 
+                                                          id="laudo_tumultos"
+                                                          ng-model="laudo.tumultos"> Tumultos
+                                               </label>
+                                           </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="checkbox">
+                                               <label class="control-label">
+                                                   <input type="checkbox" 
+                                                          id="laudo_ocilacaoTensao"
+                                                          ng-model="laudo.ocilacaoTensao"> Oscilações de tensão
+                                               </label>
+                                           </div>
+                                        </div>                        
+                                    </div>                        
+                                </div>                        
+                            </div>                        
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="laudo_checkbox_observacao" class="col-lg-12 control-label">
+                                    Comentar se alguma(s) das opções acima representa (m) aspectos agravantes do risco:
+                                </label>
+                                <div class="col-md-12">
+                                     <textarea class="form-control" 
+                                                 rows="3" 
+                                                 id="laudo_checkbox_observacao"
+                                                 ng-model="laudo.checkboxObservacao">
+                                     </textarea>
+                                </div>
+                            </div>  
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --------------------
+            Protecao Existentes no risco
+        -------------------------- -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Proteção existentes no risco </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="control-label col-lg-12">
+                                            Proteções contra incêndio (equipamentos instalados em quantidade e condições adequadas):
+                                        </label>
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-lg-2"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="protecaoIncendio_extintores"
+                                                                   ng-model="protecaoIncendio.extintores"> Extintores
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="protecaoIncendio_hidrantes"
+                                                                  ng-model="protecaoIncendio.hidrantes"> Hidrantes
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="protecaoIncendio_sprinklers"
+                                                                  ng-model="protecaoIncendio.sprinklers"> Sprinklers
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="protecaoIncendio_paraRaios"
+                                                                  ng-model="protecaoIncendio.paraRaios"> Para-raios
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="protecaoIncendio_avisadores"
+                                                                  ng-model="protecaoIncendio.avisadores"> Avisadores
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="protecaoIncendio_alarmes"
+                                                                  ng-model="protecaoIncendio.alarmes"> Alarmes
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="protecaoIncendio_brigada"
+                                                                  ng-model="protecaoIncendio.brigada"> Brigada
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                            </div>    
+                                        </div>    
+                                    </div>    
+                                </div>    
+                            </div>    
+                        </div>   
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="control-label col-lg-12">
+                                            Proteções contra danos elétricos:
+                                        </label>
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-lg-3"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="protecaoIncendio_estabilizadoresCorrente"
+                                                                   ng-model="protecaoIncendio.extintores"> Estabilizadores de corrente
+                                                       </label>
+                                                    </div>
+                                                </div>  
+                                                <div class="col-lg-2"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="protecaoIncendio_noBreak"
+                                                                   ng-model="protecaoIncendio.noBreak"> No-break
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="control-label col-lg-12">
+                                           Proteções contra roubo (serviços de vigilância e equipamentos de proteção monitorados e  funcionando 24h):
+                                        </label>
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-lg-3"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="protecaoIncendio_estabilizadoresCorrente"
+                                                                   ng-model="protecaoIncendio.extintores"> Vigilâcia 24 horas
+                                                       </label>
+                                                    </div>
+                                                </div>  
+                                                <div class="col-lg-3"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="protecaoIncendio_noBreak"
+                                                                   ng-model="protecaoIncendio.noBreak"> Grades em portas/janelas
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="protecaoIncendio_noBreak"
+                                                                   ng-model="protecaoIncendio.noBreak"> Circuito interno TV, interfone
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="protecaoIncendio_noBreak"
+                                                                   ng-model="protecaoIncendio.noBreak"> Alarme anti-furto monitorado
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2"> 
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                   id="protecaoIncendio_noBreak"
+                                                                   ng-model="protecaoIncendio.noBreak"> Portão automático
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        A escada (saída de emergência) é isolada por porta dupla corta-fogo
+                                        <input type="checkbox"
+                                                id="protecaoIncendio_portaCortaFogo"
+                                                ng-model="protecaoIncendio.portaCortaFogo"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Existe reserva específica para incêndio no reservatório de água
+                                        <input type="checkbox"
+                                                id="protecaoIncendio_reservaAguaReservatorio"
+                                                ng-model="protecaoIncendio.reservaAguaReservatorio"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Existem paredes corta-fogo isolando os riscos de maior periculosidade
+                                        <input type="checkbox"
+                                                id="protecaoIncendio_predesCortaFogo"
+                                                ng-model="protecaoIncendio.predesCortaFogo"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Existe policiamento intensivo nas redondezas, posto policial, delegacia ou outros?
+                                        <input type="checkbox"
+                                                id="protecaoIncendio_pliciamentoRedondezas"
+                                                ng-model="protecaoIncendio.pliciamentoRedondezas"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Existe vigilância 24 horas exclusiva nas garagens c/controle entrada/saída
+                                        <input type="checkbox"
+                                                id="protecaoIncendio_vigilancia"
+                                                ng-model="protecaoIncendio.vigilancia"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Existe esquema de policiamento privado para o bairro/condomínio
+                                        <input type="checkbox"
+                                                id="protecaoIncendio_policiamentoPrivado"
+                                                ng-model="protecaoIncendio.policiamentoPrivado"> 
+                                    </label>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="protecaoIncendio_comentariosDesfavoraveis" class="col-lg-12 control-label">
+                                    Comentar qualquer resposta negativa/desfavorável acima:
+                                </label>
+                                <div class="col-md-12">
+                                     <textarea class="form-control" 
+                                                 rows="3" 
+                                                 id="protecaoIncendio_comentariosDesfavoraveis"
+                                                 ng-model="protecaoIncendio.comentariosDesfavoraveis">
+                                     </textarea>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>    
+                </div>    
+            </div>    
+        </div>
+
+
+        <!-- --------------------
+            Outras Caracteristicas do risco
+        -------------------------- -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Outras características do risco </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-12">
+                                            Existência no risco de :
+                                        </label>
+                                        <div class="col-lg-4">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_escadasCorrimao"
+                                                                  ng-model="caracteristicaRisco.escadasCorrimao"> Escadas sem corrimão nas áreas externas e/ou comuns
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_caldeiras"
+                                                                  ng-model="caracteristicaRisco.caldeiras"> Caldeiras (aquecimento de água )
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_churrasquiras"
+                                                                  ng-model="caracteristicaRisco.churrasquiras"> Churrasqueiras, forno/fogão a lenha
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_elevadores"
+                                                                  ng-model="caracteristicaRisco.elevadores"> Elevadores/escadas rolantes
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_transformadores"
+                                                                  ng-model="caracteristicaRisco.transformadores"> Transformadores/compressores
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_playground"
+                                                                  ng-model="caracteristicaRisco.playground"> Playground /Quadras esportivas
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_barasPub"
+                                                                  ng-model="caracteristicaRisco.barasPub"> Bares/PUB's/Cinemas
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_placasParedes"
+                                                                  ng-model="caracteristicaRisco.placasParedes"> Placas, letreiros e/ou paineis afixados nas paredes
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_centralGas"
+                                                                  ng-model="caracteristicaRisco.centralGas"> Central de gás
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_piscinaLagos"
+                                                                  ng-model="caracteristicaRisco.piscinaLagos"> Piscinas, lagoas artificiais
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_fachadaPastilhada"
+                                                                  ng-model="caracteristicaRisco.fachadaPastilhada"> Fachadas pastilhadas
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_porteiroAbrigo"
+                                                                  ng-model="caracteristicaRisco.porteiroAbrigo"> Porteiro eletrônico/Abrigo p/carros
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_redutorVelocidade"
+                                                                  ng-model="caracteristicaRisco.redutorVelocidade"> Redutor de velocidade nas ruas
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_restaurantes"
+                                                                  ng-model="caracteristicaRisco.restaurantes"> Restaurantes/lanchonetes
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_pisoEscorregadio"
+                                                                  ng-model="caracteristicaRisco.pisoEscorregadio"> Pisos escorregadios e/ou rampas íngremes
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_antenas"
+                                                                  ng-model="caracteristicaRisco.antenas"> Antenas  L > 5m e/ou H > 10m
+                                                       </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_saunasLavanderias"
+                                                                  ng-model="caracteristicaRisco.saunasLavanderias"> Saunas /lavanderias
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_toldosMarquises"
+                                                                  ng-model="caracteristicaRisco.toldosMarquises"> Toldos/marquises
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_caesPerigosos"
+                                                                  ng-model="caracteristicaRisco.caesPerigosos"> Cães perigosos
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_arvoreGrande"
+                                                                  ng-model="caracteristicaRisco.arvoreGrande"> Árvores de grande envergadura
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="checkbox">
+                                                       <label class="control-label">
+                                                           <input type="checkbox" 
+                                                                  id="caracteristicaRisco_boatesCasaShow"
+                                                                  ng-model="caracteristicaRisco.boatesCasaShow"> Boates/casa de show
+                                                       </label>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="caracteristicaRisco_comentariosRisco" class="col-lg-12 control-label">
+                                    Comentar caso alguns dos assunto acima destacados possam se tornar fatores agravantes do risco
+                                </label>
+                                <div class="col-md-12">
+                                     <textarea class="form-control" 
+                                                 rows="3" 
+                                                 id="caracteristicaRisco_comentariosRisco"
+                                                 ng-model="caracteristicaRisco.comentariosRisco">
+                                     </textarea>
+                                </div>
+                            </div>  
+                        </div>                       
+                    </div>    
+                </div>    
+            </div>    
+        </div> 
+
+
+        <!-- --------------------
+            Equipamentos e manutencao
+        -------------------------- -->
+
+        <div class="row">
+             <div class="col-lg-12">
+                 <div class="panel panel-primary">
+                     <div class="panel-heading">
+                         <h3 class="panel-title"> Equipamentos e manutenção </h3>
+                     </div>
+                     <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <di class="form-group">
+                                    <div class="row">
+                                        <label class="col-lg-12 control-label">Tipo de manutenção</label>
+                                        <div class="col-lg-3">
+                                            <div class="checkbox">
+                                               <label class="control-label">
+                                                   <input type="checkbox" 
+                                                          id="equipamento_preditiva"
+                                                          ng-model="equipamento.preditiva"> Preditiva
+                                               </label>
+                                           </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="checkbox">
+                                               <label class="control-label">
+                                                   <input type="checkbox" 
+                                                          id="equipamento_preventiva"
+                                                          ng-model="equipamento.preventiva"> Preventiva
+                                               </label>
+                                           </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="checkbox">
+                                               <label class="control-label">
+                                                   <input type="checkbox" 
+                                                          id="equipamento_corretiva"
+                                                          ng-model="equipamento.corretiva"> Corretiva
+                                               </label>
+                                           </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="checkbox">
+                                               <label class="control-label">
+                                                   <input type="checkbox" 
+                                                          id="equipamento_naoFeita"
+                                                          ng-model="equipamento.naoFeita"> Não é feita manutenção
+                                               </label>
+                                           </div>
+                                        </div>
+                                    </div>
+                                </di>
+                            </div>
+                        </div>   
+
+                        <!-- ----Tabela --- <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label for="equipamento_elevadoresEscadas" class="control-label">
+                                        Quantidade de Elevadores/Escadas rolantes
+                                    </label>
+                                    <input type="text" 
+                                        class="form-control" 
+                                        id="equipamento_elevadoresEscadas"
+                                        ng-model="equipamento.elevadoresEscadas"
+                                        name="equipamento_elevadoresEscadas" >
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label for="equipamento_construcaoPredominante" class="control-label">
+                                        Última manutenção
+                                    </label>
+                                    <input type="text" 
+                                        class="form-control" 
+                                        id="equipamento_construcaoPredominante"
+                                        ng-model="equipamento.manutencaoElevadoresEscadas"
+                                        name="equipamento_manutencaoElevadoresEscadas" >
+                                </div>
+                            </div>
+                        </div>  -->
+                     </div>    
+                 </div>    
+             </div>    
+        </div>
+
+
+        <!-- --------------------
+            Parecer Inspetor
+        -------------------------- -->        
+        <div class="row">
+             <div class="col-lg-12">
+                 <div class="panel panel-primary">
+                     <div class="panel-heading">
+                         <h3 class="panel-title"> Parecer do Inspetor </h3>
+                     </div>
+                     <div class="panel-body">
+                         <div class="row">
+                             <div class=" col-lg-4">
+                                 <div class="form-group label-static">
+                                     <label for="parecer_nota" class="control-label">
+                                      Nota do Risco
+                                     </label>
+                                     <select class="form-control" 
+                                             id="parecer_nota"
+                                             ng-model="parecer.nota">
+                                         <option value="1"> Ótimo </option>
+                                         <option value="2"> Muito Bom </option>
+                                         <option value="3"> Bom </option>
+                                         <option value="4"> Regular </option>
+                                         <option value="5"> Ruim </option>
+                                         <option value="6"> Péssimo </option>
+                                     </select>
+                                     <i class="fa fa-caret-down form-control-feedback"></i>
+                                 </div>
+                             </div>
+                         </div>    
+                         <div class="row">
+                             <div class="col-lg-3">
+                                 <div class="form-group label-static">
+                                     <label for="parecer_validade" class="control-label">
+                                        Validade desta inspeção
+                                     </label>
+                                     <input type="text" 
+                                             class="form-control" 
+                                             id="parecer_validade"
+                                             ng-model="parecer.validade"
+                                             name="parecer_validade" >
+                                 </div>
+                             </div>
+                             <div class="col-lg-3">
+                                 <div class="form-group label-static">
+                                     <label for="parecer_local" class="control-label">
+                                        Local
+                                     </label>
+                                     <input type="text" 
+                                             class="form-control" 
+                                             id="parecer_local"
+                                             ng-model="parecer.local"
+                                             name="parecer_local">
+                                 </div>
+                             </div>
+                             <div class="col-lg-3">
+                                 <div class="form-group label-static">
+                                     <label for="parecer_data" class="control-label">
+                                        Data
+                                     </label>
+                                     <input type="text" 
+                                             class="form-control" 
+                                             id="parecer_data"
+                                             ng-model="parecer.data"
+                                             name="parecer_data" 
+                                             mask="99/99/9999">
+                                 </div>
+                             </div>
+                             <div class="col-lg-3">
+                                 <div class="form-group label-static">
+                                     <label for="parecer_inspetorNome" class="control-label">
+                                        Inspetor
+                                     </label>
+                                     <input type="text" 
+                                             class="form-control" 
+                                             id="parecer_inspetorNome"
+                                             ng-model="parecer.inspetorNome"
+                                             name="parecer_inspetorNome">
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="row">
+                             <div class="form-group">
+                                 <label for="parecer_inspetor" class="col-lg-12 control-label">
+                                     Opinião do inspetor sobre o risco
+                                 </label>
+                                 <div class="col-md-12">
+                                      <textarea class="form-control" 
+                                                  rows="3" 
+                                                  id="parecer_inspetor"
+                                                  ng-model="parecer.inspetor">
+                                      </textarea>
+                                 </div>
+                             </div>  
+                         </div>
+                     </div>    
+                 </div>    
+             </div>    
+        </div> 
+
+
+        <!-- --------------------
+            Fotografia do risco
+        -------------------------- -->        
+        <div class="row">
+             <div class="col-lg-12">
+                 <div class="panel panel-primary">
+                     <div class="panel-heading">
+                         <h3 class="panel-title"> Fotografias do Risco </h3>
+                     </div>
+                     <div class="panel-body">
+                         <div class="row">
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+</div>  
+
+
+
+

@@ -1,0 +1,1008 @@
+<div class="row">
+    <div class="container" style="margin-top:50px;">
+        <div class="row">
+            <div class="col-md-1">
+                <a href=""
+                   class="btn btn-primary btn-fab"
+                   ui-sref="app.planilhas_equipamentos"><i class="fa fa-chevron-left"></i></a>
+            </div>
+            <div class="col-md-11">
+                <h2> {{ isUpdate ? 'Alterar':'Nova'}} Inspeção de Equipamentos </h2>
+            </div>
+        </div>
+            <!-- ----------------------
+                    Dados Gerais
+                 ------------------------ -->
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Dados </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="form-group label-static">
+                                    <label class="control-label">
+                                        Empresa Prestadora:
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="dados_prestadora"
+                                            ng-model="dados.prestadora"
+                                            name="dados_prestadora" >
+                                </div>
+                            </div>    
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label class="control-label">
+                                       Data da realização
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="dados_dataRealizacao"
+                                            ng-model="dados.dataRealizacao"
+                                            name="dados_dataRealizacao"
+                                            mask='99/99/9999' >
+                                </div>
+                            </div>    
+                        </div>    
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="form-group label-static">
+                                    <label class="control-label">
+                                       Nome ou Razão social
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="dados_nome"
+                                            ng-model="dados.nome"
+                                            name="dados_nome">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label class="control-label">
+                                       CPF/CNPJ
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="dados_cpf_cnpj"
+                                            ng-model="dados.cpf_cnpj"
+                                            name="dados_cpf_cnpj">
+                                </div>
+                            </div>                
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> 
+                                    Ramo de atividade
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="dados_ramoAtividade"
+                                            ng-model="dados.ramoAtividade"
+                                            name="dados_ramoAtividade" >
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> 
+                                    Endereço
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="dados_endereco"
+                                            ng-model="dados.endereco"
+                                            name="dados_endereco" >
+                                </div>
+                            </div>  
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> 
+                                    CEP
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="dados_cep"
+                                            ng-model="dados.cep"
+                                            name="dados_cep" 
+                                            mask="cep">
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> 
+                                        Bairro
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="dados_bairro"
+                                            ng-model="dados.bairro"
+                                            name="dados_bairro" >
+                                </div>
+                            </div>    
+                            <div class="col-lg-2">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> 
+                                        Nº
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="dados_numero"
+                                            ng-model="dados.numero"
+                                            name="dados_numero" >
+                                </div>
+                            </div> 
+                            <div class="col-lg-4 ">
+                                <div class="form-group label-static">
+                                    <label class="control-label">Cidade</label>
+                                    <input type="text"
+                                          class="form-control"
+                                           id="dados_cidade"
+                                           ng-model="dados.cidade">
+                                        <i class="fa fa-map-o form-control-feedback"></i>
+                                </div>
+                            </div>                                                      
+                            <div class="col-lg-2 ">
+                                <div class="form-group label-static">
+                                    <label for="dados_estado" class="control-label">UF</label>
+                                    <select class="form-control" 
+                                            ng-model="pedido.proponente.estado"
+                                            id="dados_estado"
+                                            uf-options>
+                                    </select>
+                                    <i class="fa fa-caret-down form-control-feedback"></i>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>    
+                </div>    
+            </div>    
+        </div> 
+        <!-- ----------------------
+            Tipo de equipamento
+         ------------------------ -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Descrição dos equipamentos(s) </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> Equipamento </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="descricao_equipamento"
+                                            ng-model="descricao.equipamento"
+                                            name="descricao_equipamento" >
+                                </div>
+                            </div> 
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> Marca </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="descricao_marca"
+                                            ng-model="descricao.marca"
+                                            name="descricao_marca" >
+                                </div>
+                            </div>    
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> Modelo </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="descricao_modelo"
+                                            ng-model="descricao.modelo"
+                                            name="descricao_modelo" >
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> Ano / Mod </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="descricao_modeloAno"
+                                            ng-model="descricao.modeloAno"
+                                            name="descricao_modeloAno" 
+                                            mask="99/99/9999">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> N° de Série</label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="descricao_numeroSerie"
+                                            ng-model="descricao.numeroSerie"
+                                            name="descricao_numeroSerie" >
+                                </div>
+                            </div>                            
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> N° Motor </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="descricao_modelo"
+                                            ng-model="descricao.modelo"
+                                            name="descricao_modelo" >
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group label-static">
+                                    <label class="control-label"> Chassi</label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="descricao_modelo"
+                                            ng-model="descricao.modelo"
+                                            name="descricao_modelo" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Tipo de equipamento </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Móvel / Obras
+                                        <input type="checkbox"
+                                                id="equipamento_tipo.movelObras"
+                                                ng-model="equipamento_tipo.movelObras"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Estacionário / Fixos
+                                        <input type="checkbox"
+                                                id="equipamento_tipo.fixos"
+                                                ng-model="equipamento_tipo.fixos"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Informática
+                                        <input type="checkbox"
+                                                id="equipamento_tipo.informatica"
+                                                ng-model="equipamento_tipo.informatica"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Médico / Hospitalar
+                                        <input type="checkbox"
+                                                id="equipamento_tipo.medico"
+                                                ng-model="equipamento_tipo.medico"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Induústrial
+                                        <input type="checkbox"
+                                                id="equipamento_tipo.industrial"
+                                                ng-model="equipamento_tipo.industrial"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Medicação / Portátil
+                                        <input type="checkbox"
+                                                id="equipamento_tipo.medicacaoPortatil"
+                                                ng-model="equipamento_tipo.medicacaoPortatil"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Agrícola, Agropecúaria, Aquicola ou Florestal
+                                        <input type="checkbox"
+                                                id="equipamento_tipo.agricola"
+                                                ng-model="equipamento_tipo.agricola"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                    <label>
+                                        Cinematográfico ( Imagem / Foto / Som / TV - Produtoras, Rádio e TV )
+                                        <input type="checkbox"
+                                                id="equipamento_tipo.cinematografico"
+                                                ng-model="equipamento_tipo.cinematografico"> 
+                                    </label>
+                                </div>
+                            </div>                          
+                        </div>    
+                    </div>    
+                </div>    
+            </div>    
+        </div> 
+        <!-- ----------------------
+            Operacao dos Equipamentos
+         ------------------------ -->            
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Operação dos Equipamentos </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Operam próxima a água (margens de rios, lagoas, açudes, represas, etc.).
+                                        <input type="checkbox"
+                                                id="equipamento_operacao_agua"
+                                                ng-model="equipamento_operacao.agua"> 
+                                    </label>
+                                </div>
+                            </div> 
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Operam sobre a água?  (em plataformas flutuantes, balsas, a bordo de navio, etc).
+                                        <input type="checkbox"
+                                                id="equipamento_operacao_sobreAgua"
+                                                ng-model="equipamento_operacao.sobreAgua"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Operam sobre a água?  (plataformas de petróleo)
+                                        <input type="checkbox"
+                                                id="equipamento_operacao_petroleo"
+                                                ng-model="equipamento_operacao.petroleo"> 
+                                    </label>
+                                </div>
+                            </div> 
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                       Operam em Canteiros de Obras (Construção Civil)
+                                        <input type="checkbox"
+                                                id="equipamento_operacao_construcaoCivil"
+                                                ng-model="equipamento_operacao.construcaoCivil"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                       Operam em Terraplanagem
+                                        <input type="checkbox"
+                                                id="equipamento_operacao_terraplanagem"
+                                                ng-model="equipamento_operacao.terraplanagem"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Operam em obras subterrâneas ou escavações de túneis?
+                                        <input type="checkbox"
+                                                id="equipamento_operacao_subterraneo"
+                                                ng-model="equipamento_operacao.subterraneo"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Operam em Usinas Hidroelétricas?
+                                        <input type="checkbox"
+                                                id="equipamento_operacao_hidroeletricas"
+                                                ng-model="equipamento_operacao.hidroeletricas"> 
+                                    </label>
+                                </div>
+                            </div> 
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Estão fixados/instalados em veículos ou em caminhões?
+                                        <input type="checkbox"
+                                                id="equipamento_operacao_fixaVeiculos"
+                                                ng-model="equipamento_operacao.fixaVeiculos"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Estão fixados/instalados em aeronaves ou embarcações?
+                                        <input type="checkbox"
+                                                id="equipamento_operacao_aeronavesEmbarcacoes"
+                                                ng-model="equipamento_operacao.aeronavesEmbarcacoes"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Os equipamentos são destinados à locação ?
+                                        <input type="checkbox"
+                                                id="equipamento_operacao_locacao"
+                                                ng-model="equipamento_operacao.locacao"> 
+                                    </label>
+                                </div>
+                            </div>                          
+                        </div>    
+                    </div>    
+                </div>    
+            </div>    
+        </div>
+<!-- ----------------------
+            Fabricação
+         ------------------------ -->                             
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> 
+                            Fabricação / Assistência técnica dos equipamentos 
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-4" style="padding: 0 30px 0 0;">
+                                    <div class="form-group label-static">
+                                        <label class="control-label"> Origem da fabricação </label>
+                                        <div class="btn-group custom-toggle" data-toggle="buttons">
+                                            <label class="btn btn-success active" ng-click="nacional.isFabricacao=false">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"
+                                                       checked> Importado
+                                            </label>
+                                            <label class="btn btn-danger" ng-click="nacional.isFabricacao=true">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"> Nacional
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8" style="padding: 0 30px 0 0;" ng-hide="nacional.isFabricacao">
+                                    <div class="form-group label-static">
+                                        <label class="control-label"> 
+                                            Se existir, informe o nome da rede de assistência técnica no Brasil
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="fabricacao_nacional"
+                                               ng-model="fabricacao.nacional"
+                                               name="fabricacao_nacional"
+                                               ng-required="nacional.isFabricacao">
+                                        <i class="fa fa-question form-control-feedback"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>    
+                </div>    
+            </div>    
+        </div>
+
+       <!-- ----------------------
+            Forma de aquisição
+         ------------------------ -->    
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Forma de aquisição dos equipamentos </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-5" style="padding: 0 30px 0 0;">
+                                    <div class="form-group label-static">
+                                        <label class="control-label"> Os equipamentos foram adquiridos com recursos próprios do Segurado </label>
+                                        <div class="btn-group custom-toggle" data-toggle="buttons">
+                                            <label class="btn btn-success active" ng-click="recurso.isSegurado=true">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"
+                                                       checked> Sim
+                                            </label>
+                                            <label class="btn btn-danger" ng-click="recurso.isSegurado=false">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"> Não 
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7" style="padding: 0 30px 0 0;" ng-hide="recurso.isSegurado">
+                                    <div class="form-group label-static">
+                                        <label class="control-label"> 
+                                            Se existir, informe o nome da rede de assistência técnica no Brasil
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="fabricacao_recursoProprio"
+                                               ng-model="fabricacao.recursoProprio"
+                                               name="fabricacao_recursoProprio"
+                                               ng-required="recursoProprio.isSegurado">
+                                        <i class="fa fa-question form-control-feedback"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>    
+                </div>    
+            </div>     
+        </div>
+
+        <!-- ----------------------
+          Proteção dos equipamentos
+         ------------------------ -->   
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Proteção dos equipamentos </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Possui (em) alarmes, rastreadores ou outro mecanismo de combate antifurto ?
+                                        <input type="checkbox"
+                                                id="protecao_antiFurto"
+                                                ng-model="protecao.antiFurto"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Quando estão fora de uso, são guardados em locais cercados ou fechados ?
+                                        <input type="checkbox"
+                                                id="protecao_local"
+                                                ng-model="protecao.local"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Possui proteção contra Roubo ?
+                                        <input type="checkbox"
+                                                id="protecao_protecaoRoubo"
+                                                ng-model="protecao.protecaoRoubo"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Possui extintores ou sprinklers para combate a incêndio?
+                                        <input type="checkbox"
+                                                id="protecao_incendio"
+                                                ng-model="protecao.incendio"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Vizinhança Urbana ?
+                                        <input type="checkbox"
+                                                id="protecao_urbana"
+                                                ng-model="protecao.urbana"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Vizinhança Rural ?
+                                        <input type="checkbox"
+                                                id="protecao_rural"
+                                                ng-model="protecao.rural"> 
+                                    </label>
+                                </div>
+                            </div> 
+                        </div> 
+                    </div>    
+                </div>    
+            </div>    
+        </div> 
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Operadores </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-5" style="padding: 0 30px 0 0;">
+                                    <div class="form-group label-static">
+                                        <label class="control-label"> 
+                                            Os equipamentos são operados somente por funcionários do Proponente ?
+                                         </label>
+                                        <div class="btn-group custom-toggle" data-toggle="buttons">
+                                            <label class="btn btn-success active" ng-click="recurso.isSegurado=false">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"
+                                                       checked> Sim
+                                            </label>
+                                            <label class="btn btn-danger" ng-click="recurso.isSegurado=true">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"> Não 
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7" style="padding: 0 30px 0 0;" ng-hide="recurso.isSegurado">
+                                    <div class="form-group label-static">
+                                        <label class="control-label"> 
+                                           O funcionario possui treinamento para operação ?
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="operador_funcionarioProponente"
+                                               ng-model="operador.funcionarioProponente"
+                                               name="operador_funcionarioProponente"
+                                               ng-required="recurso.isSegurado">
+                                        <i class="fa fa-question form-control-feedback"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>    
+            </div>    
+        </div>    
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Manutenção e estado de conservação dos equipamento </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        O proponente realiza manutenções periódicas ?
+                                        <input type="checkbox"
+                                                id="manutencao_manutencaoPeriodoca"
+                                                ng-model="manutencao.manutencaoPeriodoca"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Após ligar o equipamento, foi detectado algum ruído ou barulho estranho ?
+                                        <input type="checkbox"
+                                                id="manutencao_ruidoEstranho"
+                                                ng-model="manutencao.ruidoEstranho"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Foi detectado algum vazamento de fluido?
+                                        <input type="checkbox"
+                                                id="manutencao_vazamentoFluido"
+                                                ng-model="manutencao.vazamentoFluido"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        Há sinais de corrosão e/ou oxidação na lataria ou no motor?
+                                        <input type="checkbox"
+                                                id="manutencao_oxidacaoLataria"
+                                                ng-model="manutencao.oxidacaoLataria"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        O equipamento esta corretamente montado ?
+                                        <input type="checkbox"
+                                                id="manutencao_montadoCorretamente"
+                                                ng-model="manutencao.montadoCorretamente"> 
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="togglebutton">
+                                     <label>
+                                        A fiação esta aparente e mau estado de conservação?
+                                        <input type="checkbox"
+                                                id="manutencao_vazamentoFluido"
+                                                ng-model="manutencao.vazamentoFluido"> 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-lg-3 form-group">
+                                <div class="form-group label-static">
+                                    <label for="manutencao_limpezaGeral" class="control-label">
+                                        O aspecto geral de limpeza é:                        
+                                    </label>
+                                    <select class="form-control" 
+                                            ng-model="manutencao.limpezaGeral" 
+                                            id="manutencao_limpezaGeral">
+                                        <option value="B">Bom</option>
+                                        <option value="R">Ruim</option>
+                                    </select>
+                                    <i class="fa fa-caret-down form-control-feedback"></i>
+                                </div>
+                            </div>
+                            <div class=" col-lg-3 form-group">
+                                <div class="form-group label-static">
+                                    <label for="manutencao_conservacaoGeral" class="control-label">
+                                         O estado de conservação geral é:                        
+                                    </label>
+                                    <select class="form-control" 
+                                            ng-model="manutencao.conservacaoGeral" 
+                                            id="manutencao_conservacaoGeral">
+                                        <option value="B">Bom</option>
+                                        <option value="R">Ruim</option>
+                                    </select>
+                                    <i class="fa fa-caret-down form-control-feedback"></i>
+                                </div>
+                            </div>   
+                            <div class="col-lg-12">
+                                <div class="col-lg-5" style="padding: 0 30px 0 0;">
+                                    <div class="form-group label-static">
+                                        <label class="control-label"> 
+                                            Há avarias aparentes na lataria ou no motor ?
+                                         </label>
+                                        <div class="btn-group custom-toggle" data-toggle="buttons">
+                                            <label class="btn btn-success active" ng-click="recurso.isSegurado=false">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"
+                                                       checked> Sim
+                                            </label>
+                                            <label class="btn btn-danger" ng-click="recurso.isSegurado=true">
+                                                <input type="radio"
+                                                       name="options"
+                                                       autocomplete="off"> Não 
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7" style="padding: 0 30px 0 0;" ng-hide="recurso.isSegurado">
+                                    <div class="form-group label-static">
+                                        <label class="control-label"> 
+                                           qual o custo aproximado para reparação.
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="operador_funcionarioProponente"
+                                               ng-model="operador.funcionarioProponente"
+                                               name="operador_funcionarioProponente"
+                                               ng-required="recurso.isSegurado"
+                                               mask-money>
+                                        <i class="fa fa-question form-control-feedback"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>          
+                    </div>    
+                </div>    
+            </div>    
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Informações sobre deslomanento </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label">Mencionar a frequência com os equipamentos são deslocados </label>
+                                <div class="col-lg-2">
+                                    <div class="checkbox">
+                                        <label class="control-label">
+                                            <input type="checkbox" 
+                                                    id="deslocamento_naoDesloca"
+                                                    ng-model="deslocamento.naoDesloca"> Não se desloca
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="checkbox">
+                                        <label class="control-label">
+                                            <input type="checkbox" 
+                                                    id="deslocamento_semanalmente"
+                                                    ng-model="deslocamento.semanalmente"> Semanalmente
+                                        </label>
+                                    </div>
+                                </div>    
+                                <div class="col-lg-2">
+                                    <div class="checkbox">
+                                        <label class="control-label">
+                                            <input type="checkbox" 
+                                                    id="deslocamento_Mensalmente"
+                                                    ng-model="deslocamento.mensalmente"> Mensalmente
+                                        </label>
+                                    </div>
+                                </div>                        
+                            </div>                        
+                        </div>
+                        <div class="row">
+                            <label class="col-lg-4 control-label"> Qual é a abrangência geográfica dos deslocamentos ?</label>
+                            <div class="col-lg-2">
+                                <div class="checkbox">
+                                    <label class="control-label">
+                                        <input type="checkbox" 
+                                                id="deslocamento_municipal"
+                                                ng-model="deslocamento.municipal"> Municipal
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="checkbox">
+                                    <label class="control-label">
+                                        <input type="checkbox" 
+                                                id="deslocamento_estadual"
+                                                ng-model="deslocamento.estadual"> Estadual
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="checkbox">
+                                    <label class="control-label">
+                                        <input type="checkbox" 
+                                                id="deslocamento_entreEstados"
+                                                ng-model="deslocamento.entreEstados"> Entre Estados
+                                    </label>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>    
+                </div>    
+            </div>    
+        </div>                
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Parecer Final do Inspetor </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class=" col-lg-4">
+                                <div class="form-group label-static">
+                                    <label class="control-label">
+                                     Risco
+                                    </label>
+                                    <select class="form-control" 
+                                            ng-model="parecer_parecerInspetor" 
+                                            id="parecer.parecerInspetor">
+                                        <option value="A"> Risco Aceitável</option>
+                                        <option value="R"> Risco Recusável </option>
+                                    </select>
+                                    <i class="fa fa-caret-down form-control-feedback"></i>
+                                </div>
+                            </div>  
+                            <div class="col-lg-8">
+                                <div class="form-group label-static">
+                                    <label for="parecer_nome" class="control-label"> Nome do Inspetor</label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="parecer_nome"
+                                            ng-model="parecer.nome"
+                                            name="parecer_nome" >
+                                </div>
+                            </div>                                                  
+                        </div>    
+                        <div class="row">
+                            <div class=" col-lg-4">
+                                <div class="form-group label-static">
+                                    <label for="parecer_responsavelInformacao" class="control-label">
+                                     Responsável pelas informações
+                                    </label>
+                                    <select class="form-control" 
+                                            id="parecer_responsavelInformacao"
+                                            ng-model="parecer.responsavelInformacao">
+                                        <option value="S">Segurado</option>
+                                        <option value="P">Parente</option>
+                                        <option value="F">Funcionário</option>
+                                        <option value="D">Demais</option>
+                                    </select>
+                                    <i class="fa fa-caret-down form-control-feedback"></i>
+                                </div>
+                            </div>  
+                            <div class="col-lg-8">
+                                <div class="form-group label-static">
+                                    <label for="parecer_nomeInformacao" class="control-label"> 
+                                    Nome do Responsável pelas informações
+                                    </label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="parecer_nomeInformacao"
+                                            ng-model="parecer.nomeInformacao"
+                                            name="parecer_nomeInformacao" >
+                                </div>
+                            </div>                                                      
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="risco_2_observacao" class="col-lg-12 control-label">
+                                    Justificativas
+                                </label>
+                                <div class="col-md-12">
+                                     <textarea class="form-control" 
+                                                 rows="3" 
+                                                 id="parecer_justificativa"
+                                                 ng-msodel="parecer.justificativa">
+                                     </textarea>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>    
+                </div>    
+            </div>    
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Fotos </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                        </div>    
+                    </div>    
+                </div>    
+            </div>    
+        </div>                      
+    </div>  
+</div>  
+

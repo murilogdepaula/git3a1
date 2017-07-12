@@ -1,0 +1,68 @@
+html,
+body {
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.access-container{
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 50px;
+  background: #ffffff;
+  position: relative;
+  top: 5%;
+  width: 30%;
+  border: 5px solid;
+}
+
+.message-success{
+  color: #3c763d;
+  background-color: #dff0d8;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.message-error{
+  color: #a94442;
+  background-color: yellow;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.info-color{
+  color: #03a9f4 !important;
+}
+
+.danger-color{
+  color:#f44336 !important;
+}
+
+.warning-color{
+  color:#ff5722 !important;
+}
+
+.success-color{
+  color:#4caf50 !important;
+}
+
+.delay{
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.box-shadow3{
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.error-container {
+  margin: 0 auto;
+  margin-top: 150px;
+  max-width: 500px;
+  _width: 500px;
+  padding: 30px 20px 50px;
+  color: #ffffff;
+  background-color: rgba(255,255,255,.1) !important;
+}

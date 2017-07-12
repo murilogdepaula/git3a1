@@ -1,0 +1,441 @@
+<div class="row">
+    <div class="container" style="margin-top:50px;">
+        <div class="row">
+            <div class="col-md-1">
+                <a href="javascript:void(0)"
+                   class="btn btn-primary btn-fab"
+                   ui-sref="app.pedidos"><i class="fa fa-chevron-left"></i></a>
+            </div>
+            <div class="col-md-9">
+                <h2>Resumo Pedido</h2>
+            </div>
+            <div class="col-md-2">
+                <label class="label {{statusPedido.style}}" style="padding: 8px;">
+                    {{statusPedido.description.toUpperCase()}}
+                </label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <ul class="nav nav-tabs" style="margin: 15px 0;">
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_edit({id:pedido._id})">Pedido</a></li>
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_add_agendamento({id:pedido._id})">Agendamento</a></li>
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_add_deslocamento({id:pedido._id})">Deslocamento</a></li>
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_resumo({id:pedido._id})">Resumo</a></li>
+                <li class="active"><a href="javascript:void(0)" ui-sref="app.pedidos_analista({id:pedido._id})">Área do Analista</a></li>
+            </ul>
+        </div>
+
+        <form id="pedido-deslocamento-form" role="form" name="pedidoDeslocamentoForm">
+            <a href="javascript:void(0)" class="btn btn-danger btn-raised" ng-click="confirmDeletePedido(u)">Cancelar Pedido <i class="fa fa-trash"></i></a>
+            <div class="row transparent" style="margin-top: 20px;">
+
+
+                <div class="col-lg-3">
+                    <div class="form-group label-static">
+                        <label for="nrPedido" class="control-label">Número Pedido:</label>
+                        <input readonly
+                               type="text"
+                               class="form-control"
+                               id="nrPedido"
+                               ng-model="pedido.nrPedido"
+                               name="nrPedido">
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3">
+                    <div class="form-group label-static">
+                        <label for="seguradora" class="control-label">Seguradora:</label>
+                        <input readonly
+                               type="text"
+                               class="form-control"
+                               id="seguradora"
+                               ng-model="pedido.seguradora.nome"
+                               name="seguradora">
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group label-static">
+                        <label for="ramo" class="control-label">Ramo:</label>
+                        <input readonly
+                               type="text"
+                               class="form-control"
+                               id="ramo"
+                               ng-model="pedido.ramo.nome"
+                               name="ramo">
+                    </div>
+                </div>
+
+
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <label for="proponente" class="control-label">Proponente:</label>
+                        <input type="text" readonly
+                               class="form-control"
+                               id="proponente"
+                               ng-model="pedido.proponente.nome"
+                               name="proponente">
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-show="pedido.agendamento.agendado">
+
+                <div class="col-lg-4">
+                    <div class="form-group label-static">
+                        <label for="contatoNoAgendamento" class="control-label">Contato no Agendamento:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="contatoNoAgendamento"
+                               ng-model="pedido.agendamento.contatoNoAgendamento"
+                               name="contatoNoAgendamento">
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group label-static">
+                        <label for="dataAgendamento" class="control-label">Data Agendamento:</label>
+                        <input mask="99/99/9999" type="text"
+                               class="form-control"
+                               id="dataAgendamento"
+                               ng-model="pedido.agendamento.dataAgendamento"
+                               name="dataAgendamento">
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="form-group label-static">
+                        <label for="horaMarcada" class="control-label">Hora Marcada:</label>
+                        <input type="text" mask="99:99"
+                               class="form-control"
+                               id="horaMarcada"
+                               ng-model="pedido.agendamento.horaMarcada"
+                               name="horaMarcada">
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="form-group label-static">
+                        <div class="checkbox">
+                            <label>
+                                Horario Comercial
+                                <input type="checkbox" ng-model="pedido.agendamento.horarioComercial">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-6">
+                    <div class="form-group label-static">
+                        <label for="quemProcurar" class="control-label">Quem procurar no Local:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="quemProcurar"
+                               ng-model="pedido.agendamento.quemProcurar"
+                               name="quemProcurar">
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group label-static">
+                        <label for="telefoneLocalAgendamento" class="control-label">Telefone de contato local de agendamento:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="telefoneLocalAgendamento"
+                               ng-model="pedido.agendamento.telefoneLocalAgendamento"
+                               name="telefoneLocalAgendamento">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row" ng-if="!pedido.agendamento.paraOMesmo">
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <label for="localRiscoDivergente" class="control-label">Informações local de Risco Divergente:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="localRiscoDivergente"
+                               ng-model="pedido.agendamento.localRiscoDivergente"
+                               name="localRiscoDivergente">
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-if="pedido.agendamento.paraOMesmo">
+
+                <div class="col-lg-3">
+                    <div class="form-group label-static">
+                        <label for="cep" class="control-label">CEP</label>
+                        <input type="cep"
+                               class="form-control"
+                               id="cep"
+                               ng-model="pedido.localrisco.cep"
+                               name="cep"
+                               mask="cep">
+                        <i class="fa fa-location-arrow form-control-feedback"></i>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="form-group label-static">
+                        <label for="logradouro" class="control-label">Logradouro</label>
+                        <input type="text"
+                               class="form-control"
+                               id="logradouro"
+                               ng-model="pedido.localrisco.logradouro">
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group label-static">
+                        <label for="numero" class="control-label">Número</label>
+                        <input type="text"
+                               class="form-control"
+                               id="numero"
+                               ng-model="pedido.localrisco.numero"
+                               name="numero">
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group label-static">
+                        <label for="bairro" class="control-label">Bairro</label>
+                        <input type="text"
+                               class="form-control"
+                               id="bairro"
+                               ng-model="pedido.localrisco.bairro"
+                               name="bairro">
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group label-static">
+                        <label for="cidade" class="control-label">Cidade:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="cidade"
+                               ng-model="pedido.localrisco.cidade"
+                               name="cidade">
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="form-group label-static">
+                        <label for="enderecoEstado" class="control-label">UF:</label>
+                        <select class="form-control" ng-model="pedido.localrisco.estado"
+                                id="enderecoEstado"
+                                uf-options>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <label for="enderecoComplemento" class="control-label">Complemento:</label>
+                        <input type="text"
+                               class="form-control"
+                               id="enderecoComplemento"
+                               ng-model="pedido.localrisco.complemento"
+                               name="enderecoComplemento">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group label-static">
+                        <label for="coberturas" class="control-label">Coberturas:</label>
+                        <textarea readonly class="form-control"
+                                  id="coberturas"
+                                  ng-model="pedido.coberturas"
+                                  style="min-height: 100px"
+                                  name="coberturas"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="form-group label-static">
+                        <label for="prestador" class="control-label">Prestador:</label>
+                        <select class="form-control"
+                                id="prestador"
+                                ng-options="item as item.nome for item in prestadoras track by item._id"
+                                ng-model="prestadorSelected">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="form-group label-static">
+                        <label for="emailPrestador" class="control-label">E-mail Prestador:</label>
+                        <input readonly="readonly"
+                               type="text"
+                               class="form-control"
+                               id="emailPrestador"
+                               ng-model="prestadorSelected.email"
+                               name="emailPrestador">
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <button class="btn btn-raised btn-info pull-right" ng-click="enviarAoPrestador()">Enviar ao Prestador</button>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">&nbsp;</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-4 form-group">
+                                <div class="togglebutton">
+                                    <label>
+                                        VISTORIA RECEBIDA
+                                        <input type="checkbox"
+                                               id="vistoriaRecebida"
+                                               ng-model="vitoriaRecebida">
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 form-group">
+                                <div class="form-group label-static">
+                                    <label for="dataVistoria" class="control-label">Data:</label>
+                                    <input type="text"
+                                           mask="99/99/9999"
+                                           class="form-control"
+                                           id="dataVistoria"
+                                           ng-model="pedido.dataVistoria"
+                                           name="dataVistoria">
+                                    <i class="fa fa-calendar form-control-feedback"></i>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 form-group">
+                                <div class="form-group label-static">
+                                    <label for="horaVistoria" class="control-label">Hora:</label>
+                                    <input type="text"
+                                           mask="99:99"
+                                           class="form-control"
+                                           id="horaVistoria"
+                                           ng-model="pedido.horaVistoria"
+                                           name="horaVistoria">
+                                    <i class="fa fa-calendar form-control-feedback"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-raised btn-info pull-right" ng-click="enviarAoAnalista()">Enviar ao Analista</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+
+
+
+
+    <!----------------------------------------------------------------
+             //-- pedidoDialogEnviarEmailCia
+             ------------------------------------------------------------------>
+    <script type="text/ng-template" id="pedidoDialogEnviarEmailPrestador.html">
+        <div class="modal-header">
+            <!--<button type="button" class="close" ng-click="cancel()" aria-hidden="true">×</button>-->
+            <h4 class="modal-title">Enviar e-mail para Prestador</h4>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputEmail" class="col-md-2 control-label">Prestadora</label>
+
+                    <div class="col-md-10">
+                        <input type="text" ng-model="pedido.prestador.nome" class="form-control" id="nomePrestador" placeholder="Nome Prestador">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-md-2 control-label">E-mail Prestador</label>
+
+                    <div class="col-md-10">
+                        <input type="email" ng-model="pedido.prestador.email" class="form-control" id="emailPrestador" placeholder="Email Prestador">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="textArea" class="col-md-2 control-label">Mensagem</label>
+
+                    <div class="col-md-10">
+                        <textarea class="form-control" rows="7" id="textArea" readonly ng-model="mensagem"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr class="divider"/>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default btn-raised" ng-click="cancel()">Cancelar</button>
+            <button type="button" ng-click="ok()" class="btn btn-success btn-raised">Enviar E-mail</button>
+        </div>
+    </script>
+
+    <!----------------------------------------------------------------
+             //-- pedidoDialogEnviarEmailCia
+             ------------------------------------------------------------------>
+    <script type="text/ng-template" id="pedidoDialogEnviarEmailAnalista.html">
+        <div class="modal-header">
+            <!--<button type="button" class="close" ng-click="cancel()" aria-hidden="true">×</button>-->
+            <h4 class="modal-title">Enviar e-mail para Analista</h4>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputEmail" class="col-md-2 control-label">Para</label>
+
+                    <div class="col-md-10">
+                        <input type="email" ng-model="emailAnalista" class="form-control" id="inputEmail" placeholder="Email Analista">
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="form-group">
+                    <label for="textArea" class="col-md-2 control-label">Mensagem</label>
+
+                    <div class="col-md-10">
+                        <textarea class="form-control" rows="7" id="textArea" readonly ng-model="mensagem"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="divider"/>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default btn-raised" ng-click="cancel()">Cancelar</button>
+            <button type="button" ng-click="ok()" class="btn btn-success btn-raised">Enviar E-mail</button>
+        </div>
+    </script>
+
+    <!----------------------------------------------------------------
+         //-- Modal para confirmar deletar pedido
+         ------------------------------------------------------------------>
+    <script type="text/ng-template" id="pedidoModalConfirmDelete.html">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="cancel()" aria-hidden="true">×</button>
+            <h4 class="modal-title">Atenção</h4>
+        </div>
+        <div class="modal-body">
+            <p>Deseja remover pedido {{pedido.nrPedido}}?</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" ng-click="cancel()">Cancelar</button>
+            <button type="button" ng-click="ok()" class="btn btn-primary btn-delete">Confirmar</button>
+        </div>
+    </script>
+
+</div>
